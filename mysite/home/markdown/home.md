@@ -6,12 +6,12 @@ So if you are dissatisfied with `Java Reflection`, welcome to aboard :)
 
 If you are an android developer, [Androjeta](https://github.com/brooth/androjeta) is better way to go.
 
-Jeta at a glance:
+At a glance:
 --------
 `Jeta` provides a number of useful annotations that might help your to develop java programs quicker and safer. Let's take a look on a simple example:
 
 ### @Log
-Any logger can be provided via `@Log` annotation:
+With `Log` annotation you can supply named logger in your classes. By default the logger has a name of the host class:
 
 	:::java
 	class LogSample {
@@ -26,9 +26,9 @@ instead of:
 	    private static final Logger logger = LoggerFactory.getLogger(LogSample.class);
 	}
  
-The second approach instigates copy-paste. It's often forgotten to replace the class name, so many loggers might have incorrect names. The first code snippet doesn't cause any issues and `logger` has a name `LogSample` as you expect.
+The second approach instigates copy-paste. It's often forgotten to replace the class name, so loggers might have incorrect names. The first code snippet doesn't cause any issues and `logger` has a name `LogSample` as you expect.
 
-Refer to the [user's guide](/guide) to find more.
+Refer to the [user's guide](/guide) to find more features.
 
 Installation (gradle):
 ----------------------

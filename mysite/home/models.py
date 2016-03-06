@@ -9,7 +9,7 @@ from markdown import markdown
 
 class MarkdownPage(models.Model):
     title = models.CharField(max_length=140)
-    path = models.CharField(max_length=140, unique=True)
+    path = models.CharField(max_length=140, unique=True, blank=True)
     md_filename = models.CharField(max_length=100)
     html_content = models.TextField(editable=False, blank=True, null=True)
 
