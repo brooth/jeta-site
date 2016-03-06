@@ -30,12 +30,20 @@
         <div class="content panel panel-default">
             <div class="panel-heading">
                 <a href="/">
-                    <img src="{% static 'images/jeta_short.png' %}" width="64"/>
+                    {% if "androjeta" not in request.path %}
+                        <img src="{% static 'images/jeta_short.png' %}" width="64"/>
+                    {% else %}
+                        <img src="{% static 'images/androjeta.png' %}" height="37"/>
+                    {% endif %}
                 </a>
 
                 <span style="float:right">
                     <a href="/guide" type="button" class="btn btn-link">USER'S GUIDE</a>
-                    <a href="https://github.com/brooth/jeta" type="button" class="btn btn-link">SOURCE CODE</a>
+                    {% if "androjeta" not in request.path %}
+                        <a href="https://github.com/brooth/jeta" type="button" class="btn btn-link">SOURCE CODE</a>
+                    {% else %}
+                        <a href="https://github.com/brooth/androjeta" type="button" class="btn btn-link">SOURCE CODE</a>
+                    {% endif %}
                     <button type="button" class="btn btn-link">CONTACT</button>
                     <button type="button" class="btn btn-primary">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span> DONATE
@@ -84,7 +92,7 @@
                         </ul>
                         <h4>Advanced</h4>
                         <ul style="font-size:11pt; padding-left: 20px;"> 
-                            <li><a href="/guide/custom_processor">Custom Processor</a></li>
+                            <li><a href="/guide/custom-processor">Custom Processor</a></li>
                             <li><a href="/guide/metasitory">Custom Metasitory</a></li>
                             <li><a href="/guide/extending">Extending Jeta</a></li>
                         </ul>
@@ -101,11 +109,20 @@
             {# Override this in templates to add extra javascript #}
         {% endblock %}
 
-        <a href="https://github.com/brooth/jeta">
-            <img style="position: absolute; top: 0; right: 0; border: 0;" 
-                src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
-                alt="Fork me on GitHub" 
-                data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
-        </a>
+        {% if "androjeta" not in request.path %}
+            <a href="https://github.com/brooth/jeta">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" 
+                    src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
+                    alt="Fork me on GitHub" 
+                    data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+            </a>
+        {% else %}
+            <a href="https://github.com/brooth/androjeta">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" 
+                    src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" 
+                    alt="Fork me on GitHub" 
+                    data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+            </a>
+        {% endif %}
     </body>
 </html>
