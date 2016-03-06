@@ -1,0 +1,11 @@
+body {
+    background-color: #dfdfdf !important;
+}
+
+div.content {
+    max-width: 1000px;
+    margin: 0px auto;
+    font-size: 12pt;
+}
+
+

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block title %}{{ content.title }}{% endblock %}
+
+{% block content %}
+    {{ content.html_content|safe}}
+{% endblock %}
