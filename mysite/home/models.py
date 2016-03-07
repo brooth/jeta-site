@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import os
 
 from django.db import models
 from django.conf import settings
@@ -14,9 +15,17 @@ class MarkdownPage(models.Model):
     html_content = models.TextField(editable=False, blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        md_file = open(settings.MARKDOWN_FILES_URL + self.md_filename, 'r+')
-        self.html_content = markdown(md_file.read(), ['codehilite'])
-        md_file.close()
+        filename = settings.MARKDOWN_FILES_URL + self.md_filename
+        if(os.path.exists(filename)):
+            md_file = open(filename, 'r+')
+            self.html_content = markdown(md_file.read(), ['codehilite'])
+            md_file.close()
+        else:
+            md_file = open(filename, 'w+')
+            md_file.write('Let me think...')
+            md_file.close()
+            self.html_content = 'Under construction'
+
         super(MarkdownPage, self).save(*args, **kwargs)
 
     def __str__(self):

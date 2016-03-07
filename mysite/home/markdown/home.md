@@ -4,7 +4,9 @@ Metaprogramming is achieved by code generating which makes programs fast and sta
 
 So if you are dissatisfied with `Java Reflection`, welcome to aboard :)
 
-If you are an android developer, [Androjeta](https://github.com/brooth/androjeta) is better way to go.
+<div class="alert alert-success" role="alert" style="margin-top:20px; margin-bottom:20px">
+For android developers, <a href="https://github.com/brooth/androjeta">Androjeta</a> is the better way to go.
+</div>
 
 At a glance:
 --------
@@ -13,19 +15,19 @@ At a glance:
 ### @Log
 With `Log` annotation you can supply named logger in your classes. By default the logger has a name of the host class:
 
-	:::java
-	class LogSample {
-	    @Log
-	    Logger logger;
-	}
+    :::java
+    class LogSample {
+        @Log
+        Logger logger;
+    }
 
 instead of:
 
-	:::java
-	class LogSample {
-	    private static final Logger logger = LoggerFactory.getLogger(LogSample.class);
-	}
- 
+    :::java
+    class LogSample {
+        private static final Logger logger = LoggerFactory.getLogger(LogSample.class);
+    }
+
 The second approach instigates copy-paste. It's often forgotten to replace the class name, so loggers might have incorrect names. The first code snippet doesn't cause any issues and `logger` has a name `LogSample` as you expect.
 
 Refer to the [user's guide](/guide) to find more features.
@@ -33,17 +35,17 @@ Refer to the [user's guide](/guide) to find more features.
 Installation (gradle):
 ----------------------
 
-	:::groovy
-	repositories {
-	    maven {
-	        url  "http://dl.bintray.com/brooth/maven"
-	    }
-	}
+    :::groovy
+    repositories {
+        maven {
+            url  "http://dl.bintray.com/brooth/maven"
+        }
+    }
 
-	dependencies {
-	    apt 'org.brooth.jeta:jeta-apt:0.3-beta'
-	    compile 'org.brooth.jeta:jeta:0.3-beta'
-	}
+    dependencies {
+        apt 'org.brooth.jeta:jeta-apt:0.3-beta'
+        compile 'org.brooth.jeta:jeta:0.3-beta'
+    }
 
 <span class="label label-info">Note</span> Jeta is an annotation processing tool, so you need an `apt` plugin either:
 [gradle apt plugins](https://plugins.gradle.org/search?term=apt)

@@ -1,6 +1,6 @@
 ### How it works
-* [How Jeta generates and prepares meta code](/guide/code-generation)
-* [How the meta code is applied to the classes at runtime](/guide/runtime)
+* [How Jeta generates meta code](/guide/code-generating)
+* [How the meta code is applied to the classes at runtime](/guide/at-runtime)
 * [Create MetaHelper class for the needs of your project](/guide/meta-helper)
 
 ### User's guide
@@ -25,6 +25,7 @@
 * [Bind button clicks right into your methods](/guide/androjeta/clicks)
 
 ### Advanced
+* [Advantages in a multi-module project](/guide/multi-modules)
 * [Write your own annotation processor](/guide/custom-processor)
-* [How to implement custom metasitory](/guide/metasitory)
+* [How to implement custom metasitory](/guide/custom-metasitory)
 * [Create your own annotation processing framework powered by Jeta](/guide/extending)

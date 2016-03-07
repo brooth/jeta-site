@@ -50,7 +50,7 @@
                     </button>
                 </span>
             </div>
-            
+
             <table width="100%">
                 <tr valign="top">
                     <td>
@@ -62,13 +62,13 @@
                     <td width="1px" bgcolor="#ddd"/>
                     <td width="230px" style="padding: 16px">
                         <h4>How it works:</h4>
-                        <ul style="font-size:11pt; padding-left: 20px;"> 
-                            <li><a href="/guide/code-generation">Code generation</a></li>
-                            <li><a href="/guide/runtime">Runtime</a></li>
+                        <ul style="font-size:11pt; padding-left: 20px;">
+                            <li><a href="/guide/code-generating">Code generating</a></li>
+                            <li><a href="/guide/at-runtime">At Runtime</a></li>
                             <li><a href="/guide/meta-helper">Meta Helper</a></li>
                         </ul>
                         <h4>User's Guide:</h4>
-                        <ul style="font-size:11pt; padding-left: 20px;"> 
+                        <ul style="font-size:11pt; padding-left: 20px;">
                             <li><a href="/guide/install">Installation</a></li>
                             <li><a href="/guide/config">Configuration</a></li>
                             <li><a href="/guide/logger">Logger provider</a></li>
@@ -82,7 +82,7 @@
                             <li><a href="/guide/singleton">Singleton and Multiton</a></li>
                         </ul>
                         <h4>Androjeta</h4>
-                        <ul style="font-size:11pt; padding-left: 20px;"> 
+                        <ul style="font-size:11pt; padding-left: 20px;">
                             <li><a href="/guide/androjeta/overview">Overview</a></li>
                             <li><a href="/guide/androjeta/install">Installation</a></li>
                             <li><a href="/guide/androjeta/config">Configuration</a></li>
@@ -91,11 +91,25 @@
                             <li><a href="/guide/androjeta/clicks">On clicks</a></li>
                         </ul>
                         <h4>Advanced</h4>
-                        <ul style="font-size:11pt; padding-left: 20px;"> 
+                        <ul style="font-size:11pt; padding-left: 20px;">
+                            <li><a href="/guide/multi-modules">Mutli-Modules projects</a></li>
                             <li><a href="/guide/custom-processor">Custom Processor</a></li>
-                            <li><a href="/guide/metasitory">Custom Metasitory</a></li>
+                            <li><a href="/guide/custom-metasitory">Custom Metasitory</a></li>
                             <li><a href="/guide/extending">Extending Jeta</a></li>
                         </ul>
+
+                        <table style="margin-top: 20px;">
+                            <tr>
+                                <td style="padding: 3px;">
+                                    <span class="label label-success">Last version: 0.3-beta</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 3px;">
+                                    <span class="label label-info">Available for Java 1.5+</span>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>
@@ -111,16 +125,16 @@
 
         {% if "androjeta" not in request.path %}
             <a href="https://github.com/brooth/jeta">
-                <img style="position: absolute; top: 0; right: 0; border: 0;" 
-                    src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" 
-                    alt="Fork me on GitHub" 
+                <img style="position: absolute; top: 0; right: 0; border: 0;"
+                    src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+                    alt="Fork me on GitHub"
                     data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
             </a>
         {% else %}
             <a href="https://github.com/brooth/androjeta">
-                <img style="position: absolute; top: 0; right: 0; border: 0;" 
-                    src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" 
-                    alt="Fork me on GitHub" 
+                <img style="position: absolute; top: 0; right: 0; border: 0;"
+                    src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
+                    alt="Fork me on GitHub"
                     data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
             </a>
         {% endif %}
