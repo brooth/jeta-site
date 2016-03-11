@@ -13,7 +13,7 @@ At a glance:
 `Jeta` provides a number of useful annotations that might help your to develop java programs quicker and safer. Let's take a look on a simple example:
 
 ### @Log
-With `Log` annotation you can supply named logger in your classes. By default the logger has a name of the host class:
+Named loggers can be supplied into your classes using `Log` annotation. By default, the logger has a name of the host (master) class:
 
     :::java
     class LogSample {

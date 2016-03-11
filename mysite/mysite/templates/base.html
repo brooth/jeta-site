@@ -13,6 +13,7 @@
         <title>{% block title %}Jeta - Java metacode generating framework{% endblock %}</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/jeta-favicon.png' %}"/>
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/website.css' %}">
@@ -22,8 +23,6 @@
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-
-        <link rel="shortcut icon" type="image/png" href="{% static 'images/jeta-favicon.png' %}/>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">

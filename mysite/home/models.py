@@ -22,7 +22,7 @@ class MarkdownPage(models.Model):
             md_file.close()
         else:
             md_file = open(filename, 'w+')
-            md_file.write('Let me think...')
+            md_file.write('<div class="page-header">\n\t<h2></h2>\n</div>')
             md_file.close()
             self.html_content = 'Under construction'
 

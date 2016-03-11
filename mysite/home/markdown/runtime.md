@@ -1,15 +1,22 @@
-<img src="/static/images/at_runtime.png"/>
+<div class="page-header">
+  <h2>How it works at Runtime</h2>
+</div>
+
+<img src="/static/images/at_runtime.png" width="700px"/>
 
 ### Master and Metacode
 `Master` - is java type which uses an annotation and being processed by `Jeta`. For each master, Jeta generates the `Metacode` class. It is located in the same package as its master and has a name as &lt;master name&gt; + "_Metacode".
 
 ### Metasitory
-`Metasitory` is a short for `Meta Code Repository`. It holds the required information about generated code. During the annotation processing, at compile-time, `Metasitory Writer` is creating a meta storage. This storage contains the information about the masters, their metacodes and annotations they use.
+`Metasitory` is a short for `Meta Code Repository`. It holds the required information about generated code. During the annotation processing, `Metasitory Writer` is creating a meta storage. This storage contains the information about the masters, their metacodes and annotations they use.
 
 Currenlty `Jeta` provides `HashMapMetasitory` implementation. It uses `java.util.IdentityHashMap` for storing and querying the meta code. You can replace this implementation with any other. Follow to [this guide](/guide/custom-metasitory) for the complete instructions.
 
 ### Criteria
 The `Criteria` provides a way for defining a quiry to a metasitory. In most cases, `Criteria` is used for querying metacode by its master. It's allowed to query for a single instance, that generated for a given master, or for all tree including the metacodes generated for sub-masters as well. It gives you the ability to invoke the controller ones in the super class, so in the sub-classes, metacode will be applied as well.
+
+
+todo: describe the methods
 
 ### Controller
 `Controller` searches for requited meta code and applies it to the `master`. Well, it's just a common case and some controllers do more complex work. It is not necessary to use a controller. You can create your own class to be able to invoke meta code in your way.
@@ -31,7 +38,7 @@ And the controller:
         protected Collection<HelloWorldMetacode> metacodes;
 
         public HelloWorldController(Metasitory metasitory, Object master) {
-            Criteria.Builder builder = new Criteria.Builder().masterEq(master.getClass());
+            Criteria.Builder builder = new Criteria.Builder().masterEqDeep(master.getClass());
             this.metacodes = (Collection<HelloWorldMetacode>) metasitory.search(builder.build());
         }
 
@@ -50,5 +57,5 @@ The final step - we need to create new method in owr `MetaHelper` class:
         new HelloWorldController(getInstance().metasitory, master).apply();
     }
 
-What the `MetaHelper` is and how to organize it in your project is explained in [the next article](/guide/meta-helper)
+What the `MetaHelper` is for and how to organize it in your project is explained in [the next article](/guide/meta-helper)
 

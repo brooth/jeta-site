@@ -8,4 +8,16 @@ div.content {
     font-size: 12pt;
 }
 
+div.panel-body {
+    max-width: 765px;
+}
 
+div.page-header {
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+
+pre {
+    overflow-wrap: normal !important;
+}
