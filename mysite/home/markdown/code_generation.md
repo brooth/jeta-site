@@ -14,7 +14,7 @@ There is a little information on the internet, but `javac` allows to do that. Mo
     Currenty jeta is tested on Java 1.7. Older version might be supported in future releases.
 </div>
 
-<span class="label label-success">Thanks to</span> [JavaPoet by Square](https://github.com/square/javapoet) developers for the great framework, which `Jeta` uses to generate java source code. Take this opportunity to thank the team for the excellent work!
+<span class="label label-success">Thanks to</span> [JavaPoet by Square](https://github.com/square/javapoet) for the great framework, which `Jeta` uses to generate source code.
 
 ### Hello, World!
 Let's go through details with an example, in which an annotation `@HelloWorld` sets "Hello, World!" value into a `String` field.
@@ -42,6 +42,6 @@ Similar example can be found on [GitHub](https://github.com/brooth/jeta-samples)
 
 How to write a custom annotation processor, can be found in [this guide](/guide/custom-processor)
 
-How `HelloWorldSample_Metacode` is applied to `HelloWorldSample` is explained in [this article](/guide/at-runtime)
+How `HelloWorldSample_Metacode` is applied to `HelloWorldSample` is explained in [next article](/guide/at-runtime)
 
 

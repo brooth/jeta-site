@@ -28,4 +28,4 @@ class MarkdownPage(models.Model):
         super(MarkdownPage, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.md_filename + ' at /' + self.path
+        return self.title + ' ~ (' + self.path + ') ~ (' + self.md_filename + ')'

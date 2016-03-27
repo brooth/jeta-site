@@ -21,12 +21,9 @@
 
     :::java
     public class MetaHelper {
-        private static final MetaHelper instance = new MetaHelper("com.example");
-        private final Metasitory metasitory;
         private final NamedLoggerProvider<Logger> loggerProvider;
 
         private MetaHelper(String metaPackage) {
-            metasitory = new MapMetasitory(metaPackage);
             loggerProvider = new NamedLoggerProvider<Logger>() {
                 public Logger get(String name) {
                     return new Logger(name);
@@ -40,7 +37,7 @@
         }
     }
 
-Ones your defined `createLoggers()`, you can create loggers in any class:
+Ones your defined `createLoggers()`, you can provide loggers into your classes:
 
     :::java
     public class MyBaseClass {
@@ -49,7 +46,7 @@ Ones your defined `createLoggers()`, you can create loggers in any class:
         }
     }
 
- <span class="label label-info">Note</span> `LogController` supports deep metocode invocation. This means that all the extended from `MyBaseClass` classes will get their loggers as well.
+ <span class="label label-info">Note</span> `LogController` supports deep metacode invocation. This means that all the extended from `MyBaseClass` classes will get their loggers as well.
 
     :::java
     public class MyCompleteClass extends MyBaseClass {
@@ -63,7 +60,7 @@ Ones your defined `createLoggers()`, you can create loggers in any class:
 
 
 ### Hello, World!
-Let's complete our `HelloWorld` example from [previous guide](/guide/at-runtime). Its `MetaHelper` is about to be:
+Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime). Its `MetaHelper` is about to be:
 
     :::java
     public class MetaHelper {
