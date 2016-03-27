@@ -8,7 +8,7 @@
 
     :::java
     public class MetaHelper {
-        private static final MetaHelper instance = new MetaHelper("com.example.jeta");
+        private static final MetaHelper instance = new MetaHelper("com.example");
         private final Metasitory metasitory;
 
         private MetaHelper(String metaPackage) {
@@ -21,7 +21,7 @@
 
     :::java
     public class MetaHelper {
-        private static final MetaHelper instance = new MetaHelper("com.example.jeta");
+        private static final MetaHelper instance = new MetaHelper("com.example");
         private final Metasitory metasitory;
         private final NamedLoggerProvider<Logger> loggerProvider;
 
@@ -32,16 +32,15 @@
                     return new Logger(name);
                 }
             };
-
         }
 
         public static void createLoggers(Object master) {
-            new LogController(getInstance().metasitory, master)
-                .createLoggers(getInstance().loggerProvider);
+            new LogController(instance.metasitory, master)
+                .createLoggers(instance.loggerProvider);
         }
     }
 
-Ones your defined `createLoggers()`, you can create loggers in any classes:
+Ones your defined `createLoggers()`, you can create loggers in any class:
 
     :::java
     public class MyBaseClass {
@@ -68,7 +67,7 @@ Let's complete our `HelloWorld` example from [previous guide](/guide/at-runtime)
 
     :::java
     public class MetaHelper {
-        private static final MetaHelper instance = new MetaHelper("com.example.jeta");
+        private static final MetaHelper instance = new MetaHelper("com.example");
         private final Metasitory metasitory;
 
         private MetaHelper(String metaPackage) {
@@ -76,7 +75,7 @@ Let's complete our `HelloWorld` example from [previous guide](/guide/at-runtime)
         }
 
         public static void setHelloWorld(Object master) {
-            new HelloWorldController(getInstance().metasitory, master).apply();
+            new HelloWorldController(instance.metasitory, master).apply();
         }
     }
 
