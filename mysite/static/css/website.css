@@ -17,7 +17,11 @@ div.page-header {
     margin-bottom: 30px;
 }
 
-
 pre {
     overflow-wrap: normal !important;
+}
+
+div.alert {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

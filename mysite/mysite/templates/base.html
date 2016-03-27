@@ -100,12 +100,12 @@
                         <table style="margin-top: 20px;">
                             <tr>
                                 <td style="padding: 3px;">
-                                    <span class="label label-success">Last version: 0.3-beta</span>
+                                    <span class="label label-success">Stable version: 1.0</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="padding: 3px;">
-                                    <span class="label label-info">Available for Java 1.5+</span>
+                                    <span class="label label-info">Available on Java 1.7+</span>
                                 </td>
                             </tr>
                         </table>
@@ -116,6 +116,7 @@
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/website.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-1.12.2.min.js' %}"></script>
         {% bootstrap_javascript %}
 
         {% block extra_js %}

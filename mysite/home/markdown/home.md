@@ -4,7 +4,7 @@ Metaprogramming is achieved by code generating which makes programs fast and sta
 
 So if you are dissatisfied with `Java Reflection`, welcome to aboard :)
 
-<div class="alert alert-success" role="alert" style="margin-top:20px; margin-bottom:20px">
+<div class="alert alert-success" role="alert">
 For android developers, <a href="https://github.com/brooth/androjeta">Androjeta</a> is the better way to go.
 </div>
 
@@ -37,14 +37,12 @@ Installation (gradle):
 
     :::groovy
     repositories {
-        maven {
-            url  "http://dl.bintray.com/brooth/maven"
-        }
+        jcenter()
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:0.3-beta'
-        compile 'org.brooth.jeta:jeta:0.3-beta'
+        apt 'org.brooth.jeta:jeta-apt:1.0'
+        compile 'org.brooth.jeta:jeta:1.0'
     }
 
 <span class="label label-info">Note</span> Jeta is an annotation processing tool, so you need an `apt` plugin either:

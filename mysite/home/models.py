@@ -4,7 +4,6 @@ import os
 from django.db import models
 from django.conf import settings
 
-# Create your models here.
 from markdown import markdown
 
 
@@ -18,7 +17,7 @@ class MarkdownPage(models.Model):
         filename = settings.MARKDOWN_FILES_URL + self.md_filename
         if(os.path.exists(filename)):
             md_file = open(filename, 'r+')
-            self.html_content = markdown(md_file.read(), ['codehilite'])
+            self.html_content = markdown(md_file.read(), extensions=['codehilite'])
             md_file.close()
         else:
             md_file = open(filename, 'w+')
