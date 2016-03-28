@@ -7,7 +7,7 @@
 * [Complete installation guide](/guide/install)
 * [How to configure Jeta properly](/guide/config)
 * [Provide loggers with @Log easy and safe](/guide/logger)
-* [Dependecy Injection with @Inject allows you do more and code less](/guide/meta)
+* [Dependecy Injection with @Inject allows you do more and code less](/guide/inject)
 * [Easy to use observer patten](/guide/observer)
 * [First on the market event bus without reflection](/guide/event-bus)
 * [How to collect scattered classes of your project](/guide/collector)

@@ -5,7 +5,7 @@
 <img src="/static/images/at_runtime.png" width="700px"/>
 
 ### Master and Metacode
-`Master` - is java type which uses an annotation and being processed by `Jeta`. For each master, Jeta generates the `Metacode` class. It is located in the same package as its master and has a name as &lt;master name&gt; + "_Metacode".
+`Master` - is java type which uses an annotation and being processed by `Jeta`. For each master, Jeta generates the `Metacode` class. It is located in the same package as its master and has a name in format &lt;master name&gt; + "_Metacode".
 
 ### Metasitory
 `Metasitory` is a short for `Meta Code Repository`. It holds the required information about generated code. During the annotation processing, `Metasitory Writer` creates a meta storage. This storage contains the information about the masters, their metacodes and annotations they use.

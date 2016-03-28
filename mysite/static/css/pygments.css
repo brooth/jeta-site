@@ -1,5 +1,5 @@
 .codehilite pre { background-color: rgba(255, 255, 204, 0.56); font-size: 11pt; }
-.codehilite .c { color: #FF0000; font-style: italic } /* Comment */
+.codehilite .c { color: #EC8989; font-style: italic } /* Comment */
 .codehilite .k { color: #0000FF } /* Keyword */
 .codehilite .ch { color: #FF0000; font-style: italic } /* Comment.Hashbang */
 .codehilite .cm { color: #FF0000; font-style: italic } /* Comment.Multiline */
