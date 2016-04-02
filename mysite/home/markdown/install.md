@@ -10,13 +10,14 @@ Add next lines to your `build.gradle`:
     repositories {
         jcenter()
     }
+
     dependencies {
         apt 'org.brooth.androjeta:androjeta-apt:1.0'
         compile 'org.brooth.androjeta:androjeta:1.0'
     }
 
 
-In order to use `apt`, you need to install an appropriate plugin as well. Follow to [gradle apt plugins](https://plugins.gradle.org/search?term=apt) page to know about the options. For this example let's choose `net.ltgt.apt`:
+In order to use `apt`, you need to install an appropriate plugin as well. Follow to [gradle apt plugins](https://plugins.gradle.org/search?term=apt) page to find out the options. For this example let's choose `net.ltgt.apt`:
 
     :::groovy
     buildscript {
@@ -25,6 +26,7 @@ In order to use `apt`, you need to install an appropriate plugin as well. Follow
                 url 'https://plugins.gradle.org/m2/'
             }
         }
+
         dependencies {
             classpath 'net.ltgt.gradle:gradle-apt-plugin:0.5'
         }

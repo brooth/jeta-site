@@ -8,23 +8,22 @@
 `Master` - is java type which uses an annotation and being processed by `Jeta`. For each master, Jeta generates the `Metacode` class. It is located in the same package as its master and has a name in format &lt;master name&gt; + "_Metacode".
 
 ### Metasitory
-`Metasitory` is a short for `Meta Code Repository`. It holds the required information about generated code. During the annotation processing, `Metasitory Writer` creates a meta storage. This storage contains the information about the masters, their metacodes and annotations they use.
+`Metasitory` is a short for `Meta Code Repository`. It holds the required information about generated code. During the annotation processing, `Metasitory Writer` creates a meta storage. This storage contains all the needed information about the masters, their metacodes and annotations they use.
 
-Currenlty `Jeta` provides `HashMapMetasitory` implementation. It uses `java.util.IdentityHashMap` for storing and querying the meta code. You can replace this implementation with any other. Follow to [this guide](/guide/custom-metasitory) for the complete instructions.
+Currenlty `Jeta` provides `HashMapMetasitory` implementation. It uses `java.util.IdentityHashMap` for storing and querying the metacode. You can replace this implementation with any other. Follow to [this guide](/guide/custom-metasitory) for the complete instructions.
 
 ### Criteria
-The `Criteria` provides a way for defining a quiry to a metasitory. In most cases, `Criteria` is used for querying metacode by its master. It's allowed to query for a single instance, that generated for a given master, or for all tree including the metacodes generated for sub-masters as well. It gives you the ability to invoke the controller ones in the super class, so in the sub-classes, metacode will be applied as well.
+The `Criteria` provides a way for defining quiries to a metasitory. In most cases, `Criteria` is used for querying metacode by its master. It's allowed to query for a single instance, that generated for a given master, or for the all tree including the metacodes generated for parent masters as well. It gives you the ability to invoke the controller ones in a base class, so in the all child-classes, metacode will be applied as well.
 
-
-todo: describe the methods
+todo: describe Criteria methods
 
 ### Controller
-`Controller` searches for requited meta code and applies it to the `master`. Well, it's just a common case and some controllers do more complex work. It is not necessary to use a controller. You can create your own class to be able to invoke meta code in your way.
+`Controller` searches for requited metacode using `Criteria` and applies it to the `master`. Well, it's just a common case and some controllers do more complex work. It is not necessary to use a controller. You can create your own class to be able to invoke metacode in your way.
 
 ### Hello, World!
 Let's continue to observe the `Hello, World!` example, from the [previous guide](/guide/code-generating), and find out how to apply the metacode to the sample class:
 
-First of all, we need to declare the interface. It will be implemented by metacodes generated for `@HelloWorld` users (you might note for this interface in the previous article):
+First of all, we need to declare an interface. It will be implemented by metacodes, generated for `@HelloWorld` users (you might note for this interface in the previous article):
 
     :::java
     public interface HelloWorldMetacode<M> {
@@ -38,7 +37,10 @@ And the controller:
         protected Collection<HelloWorldMetacode> metacodes;
 
         public HelloWorldController(Metasitory metasitory, Object master) {
-            Criteria criteria = new Criteria.Builder().masterEqDeep(master.getClass()).build();
+            Criteria criteria = new Criteria.Builder()
+                .masterEqDeep(master.getClass())
+                .usesAny(SayHello.class)
+                .build();
             this.metacodes = (Collection<HelloWorldMetacode>) metasitory.search(criteria);
         }
 
@@ -57,5 +59,5 @@ The final step - we need to create new method in our `MetaHelper` class:
         new HelloWorldController(getInstance().metasitory, master).apply();
     }
 
-What the `MetaHelper` is for and how to organize it in your project is explained in [the next article](/guide/meta-helper)
+What the `MetaHelper` is for and how to organize it in your project is explained in the [next article](/guide/meta-helper)
 

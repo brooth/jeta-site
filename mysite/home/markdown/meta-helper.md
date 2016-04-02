@@ -2,7 +2,7 @@
   <h2>Meta Helper</h2>
 </div>
 
-`MetaHelper` is not a class provided by `Jeta`. It's just a way to organize meta code invocation in your project. If you are not comfortable with static helpers you shouldn't use it in your project.
+`MetaHelper` is not a class provided by `Jeta`. It's just a way to organize metacode invocation in your project. If you are not comfortable with static helpers you shouldn't use it in your project.
 
 `MetaHelper` is about to provide an entry point to metacode. It holds a singleton of the metasitory and passes it to the controllers.
 

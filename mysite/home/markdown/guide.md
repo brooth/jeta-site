@@ -1,6 +1,6 @@
 ### How it works
-* [How Jeta generates meta code](/guide/code-generating)
-* [How the meta code is applied to the classes at runtime](/guide/at-runtime)
+* [How Jeta generates metacode](/guide/code-generating)
+* [How the metacode is applied to the classes at runtime](/guide/at-runtime)
 * [Create MetaHelper for your project's needs](/guide/meta-helper)
 
 ### User's guide

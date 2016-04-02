@@ -4,7 +4,7 @@
 
 ### `javax.annotation.processing`
 
-It's important to understand: `Jeta` is not evaluating the annotations by using reflection API at runtime but generates all the necessary code at compile-time. It allows to emit meta code as it's written by a hand. Also, unlike reflection, it is possible to check the code for errors before it is being launched.
+It's important to understand: `Jeta` is not evaluating the annotations by using reflection API at runtime but generates all the necessary code at compile-time. It allows to emit metacode as it's handwritten. Also, unlike reflection, it is possible to check the code for errors before it is being launched.
 
 
 ### How it works:
@@ -20,15 +20,15 @@ There is a little information on the internet, but `javac` allows to do that. Mo
 Let's go through details with an example, in which an annotation `@HelloWorld` sets "Hello, World!" value into a `String` field.
 
     :::java
-    public @interface HelloWorld {
+    public @interface SayHello {
     }
 
     public class HelloWorldSample {
-        @HelloWorld
+        @SayHello
         String str;
     }
 
-Assume if `Jeta` had a processor for this example, the meta code would be:
+Assume if `Jeta` had a processor for this example, the metacode would be:
 
     :::java
     public class HelloWorldSample_Metacode implements HelloWorldMetacode<HelloWorldSample> {
