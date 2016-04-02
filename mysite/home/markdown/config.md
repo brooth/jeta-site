@@ -12,7 +12,7 @@ By default, `Jeta` is not allowed to get the path to the source directory, so yo
         options.sourcepath = files('src/main/java')
     }
 
-The other way is available via `apt` arguments. Note that you need a plugin that supports this feature. If not, there are some hacks that might help you, but you need to google for it. Anyway, if it's allowed, add this lines to `build.gradle`:
+The other way is available via `apt` arguments. Note that you need a plugin that supports this feature. If not, there are some hacks that might help you, but you need to google for it. If it's allowed, add next lines to the `build.gradle`:
 
     :::groovy
     apt {
@@ -22,7 +22,7 @@ The other way is available via `apt` arguments. Note that you need a plugin that
     }
 
 ### `jeta.properties`
-Let's go through the options that available to config code generating properly. As it's already mentioned in the previous article, the most needed property is `metasitory.package`. It must be unique for any module, e.g. test module. This package you need to provide to `MapMetasitory` constructor. The other options are described below as comments:
+Let's go through the options that available to config code generating. As it's already mentioned, in the previous article, the most needed property is `metasitory.package`. It must be unique for any module, e.g. test module. This package you will need to provide to `MapMetasitory` constructor at runtime to be able to use this metasitory. The other options are described below as comments:
 
     :::properties
     # Source directory path. Absolute or relative to `jeta.properties` path
@@ -56,8 +56,8 @@ Let's go through the options that available to config code generating properly. 
     # Output `utd` statuses information:
     #  `+` - metacode created or rewritten
     #  `-` - metacode removed (if `utd.cleanup` enabled)
-    #  `*` - master is up-to-date, no need to re-generate
-    # (`true` by default if `debug` is enabled)
+    #  `*` - master is up-to-date
+    # (`true` by default if `debug` and `utd` are enabled)
     debug.utd_states=true
 
     # Custome annotation processors (comma separated)
@@ -65,12 +65,12 @@ Let's go through the options that available to config code generating properly. 
     processors.add=com.example.apt.MyCustomProcessor
 
     # Disable a processor by its annotation (comma separated, reg-exp allowed)
-    processors.disable=Meta.*,Log
+    processors.disable=^Meta.*$,^Log$
 
-    # Put this text as the comment at the top of generated file.
+    # Metacode file header
     file.comment=\n Use is subject to license terms. \n
 
-    # Default scope for dependency injection feature
+    # Default scope for dependency injection
     # go to http://jeta.brooth.org/guide/inject
     inject.scope.default = org.brooth.jeta.tests.inject.DefaultScope
 
