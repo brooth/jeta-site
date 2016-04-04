@@ -16,8 +16,8 @@
 * [Create a proxy class](/guide/proxy)
 * [Singleton and Multiton pattens - Jeta way](/guide/singleton)
 
-### Jeta on android platform, aka Androjeta
-* [Override](/guide/androjeta/overview)
+### Jeta on Android platform, aka Androjeta
+* [Overview](/guide/androjeta/overview)
 * [Installation](/guide/androjeta/install)
 * [Configuraion](/guide/androjeta/config)
 * [Most elegance way to bind views from a layout](/guide/androjeta/findviews)
@@ -25,7 +25,7 @@
 * [Bind button clicks right into your methods](/guide/androjeta/clicks)
 
 ### Advanced
-* [Advantages in a multi-module project](/guide/multi-modules)
-* [Write your own annotation processor](/guide/custom-processor)
+* [Advantages in multi-module projects](/guide/multi-modules)
+* [Write your first annotation processor](/guide/custom-processor)
 * [How to implement custom metasitory](/guide/custom-metasitory)
 * [Create your own annotation processing framework powered by Jeta](/guide/extending)

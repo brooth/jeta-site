@@ -16,7 +16,7 @@ There is a little information on the internet, but `javac` allows to do that. Mo
 
 <span class="label label-success">Thanks to</span> [JavaPoet by Square](https://github.com/square/javapoet) for the great framework, which `Jeta` uses to generate source code.
 
-### Hello, World!
+### Hello, World!<a name="HelloWorldSample"></a>
 Let's go through details with an example, in which an annotation `@HelloWorld` sets "Hello, World!" value into a `String` field.
 
     :::java
