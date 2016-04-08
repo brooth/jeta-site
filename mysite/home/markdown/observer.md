@@ -31,15 +31,10 @@ or both:
     :::java
     observers.notifyAndClear(event);
 
-list the observers:
-
-    :::java
-    List<EventObserver<Event>> list = observers.getAll();
-
 
 ###Observer
 
-To create an `Observer`:
+To create an `Observer`, put `@Observe` annotation on the method that accepts one parameter - `Event` class:
 
     :::java
     class Observer {
@@ -54,6 +49,8 @@ To create an `Observer`:
         void onEvent(Event event) {
         }
     }
+                
+<span class="label label-info">Note</span> You must define observable class, this method is listening to via the annotation argument.
 
 The `handler` allows you to detatch your class from `observable`:
 
@@ -66,19 +63,18 @@ Stop listening certain event:
     handler.unregister(Event.class);
 
 
-You can use one handler for all `observables`:
+You can use one handler to control the listeners of all `observables`:
 
     :::java
     handler.add(MetaHelper.registerObserver(this, otherObservable));
 
-It's allowed to unregister from all the observables at ones:
+so you to unregister all the listeners at ones:
 
     :::java
     handler.unregisterAll();
 
 ###MetaHelper
 
-Please, the the article about [MetaHelper](/guide/meta-helper) if you have questions about next listing.
 In the examples above we use two helper methods. Their code would be:
 
     :::java
@@ -92,6 +88,7 @@ In the examples above we use two helper methods. Their code would be:
             .registerObserver(observable);
     }
 
+Please, read [this article](/guide/meta-helper) if you have questions about `MetaHelper`.
 
-You should also become acquainted with [event-bus feature](/guide/event-bus) in addition to this guide.
+You should also become acquainted with [event-bus features](/guide/event-bus) in addition to this guide.
 

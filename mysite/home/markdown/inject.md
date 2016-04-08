@@ -9,7 +9,7 @@ Dependency injection is the most powerful part of `Jeta` . Besides of the common
 
 ###MetaHelper
 
-Before we start, we should define the helper method, we'll be inject with:
+Before we start, let's define a helper method we will be inject with:
 
     :::java
     public static void inject(Object master) {
@@ -17,7 +17,7 @@ Before we start, we should define the helper method, we'll be inject with:
     }
 
 
-Please, read [this](/guide/meta-helper) article first, if you have questions about `MetaHelper`.
+Please, read [this article](/guide/meta-helper) first, if you have questions about `MetaHelper`.
 
 <a name="MetaEntity"></a>
 ### MetaEntity
