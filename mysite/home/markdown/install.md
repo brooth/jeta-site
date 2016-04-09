@@ -12,8 +12,8 @@ Add next lines to your `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.androjeta:androjeta-apt:1.0'
-        compile 'org.brooth.androjeta:androjeta:1.0'
+        apt 'org.brooth.androjeta:androjeta-apt:1.1'
+        compile 'org.brooth.androjeta:androjeta:1.1'
     }
 
 
@@ -53,7 +53,7 @@ To allow `jeta.properties` be found by `Jeta` one extra step is needed. In case 
         options.sourcepath = files('src/main/java')
     }
 
-For a reason, `Gradle` doesn't provide it by itself. 
+For a reason, `Gradle` doesn't provide it by itself.
 
 Another available option - `jetaProperties` apt argument. Some of the plugins support the providing of these arguments (`net.ltgt.apt` currently doesn't)
 

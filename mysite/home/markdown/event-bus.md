@@ -79,27 +79,28 @@ As it mentioned in the previous articles, `Jeta` is designed to detect errors at
 
     public class MyFilter implements Filter<MyMessage> {
         public boolean accepts(Object master, String methodName, Message msg) {
-            //...
+            return true;
         }
     }
 
-If we try to use this filter on a method that accepts not assigneble from `MyMessage` class as the event, the code won't be compiled. But what if we need a filter that checks the master as well. You can do that with filters using `instaceof` opetator at runtime, but `MetaFilter` allows you to make checks at compile-time:
+If we try to use this filter on a method that accepts not assigneble from `MyMessage` class as the event, the code won't be compiled. But `MetaHelper` allows you to write more complex checks, e.g. access to a nonprivate constant:
 
     :::java
-    @MetaFilter(emitExpression = "$m.getTheNumber() % 2 == 0")
+    @MetaFilter(emitExpression = "$m.THE_NUMBER % 2 == 0")
     public interface EvenMetaFilter extends Filter {}
 
 
-`$m` is replaced with the master class, that uses this filter, well, if the master doesn't have `getTheNumber` method it will fail during compilation. You can also use `$e` to get access to the message. 
+`$m` is replaced with the master class, that uses this filter. So, if the master doesn't have `THE_NUMBER` field, it will fail during compilation. You can also use `$e` to get access to the message instance.
 
 
 ### MetaHelper
 
-You can use either Jeta's basic implementation of `EventBus` - `org.brooth.jeta.eventbus.BaseEventBus` or implement your own. Also, you can you single instance of the bus or create many. Nevertheless, you must pass an instance of the bus to the controller. Let's create a helper method for:
+You can either use Jeta's basic implementation of `EventBus` - `org.brooth.jeta.eventbus.BaseEventBus` or implement your own. Also, you can you a single instance of the bus or create many. Nevertheless, you must pass an instance of the bus to the controller. Let's create a helper method for:
 
     :::java
     public static SubscriptionHandler registerSubscriber(Object master) {
-        return new SubscriberController<>(metasitory, master).registerSubscriber(bus);
+        return new SubscriberController<>(metasitory, master)
+            .registerSubscriber(bus);
     }
 
 You should definitely follow [this link](/guide/meta-helper) if you are still not familiar with `MetaHelper`.

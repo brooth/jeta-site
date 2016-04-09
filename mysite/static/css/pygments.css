@@ -5,7 +5,7 @@
 .codehilite .cm { color: #FF0000; font-style: italic } /* Comment.Multiline */
 .codehilite .cp { color: #FF0000; font-style: italic } /* Comment.Preproc */
 .codehilite .cpf { color: #FF0000; font-style: italic } /* Comment.PreprocFile */
-.codehilite .c1 { color: #FF0000; font-style: italic } /* Comment.Single */
+.codehilite .c1 { color: #847B72; font-style: italic } /* Comment.Single */
 .codehilite .cs { color: #FF0000; font-style: italic } /* Comment.Special */
 .codehilite .kc { color: #0000FF } /* Keyword.Constant */
 .codehilite .kd { color: #0000FF } /* Keyword.Declaration */

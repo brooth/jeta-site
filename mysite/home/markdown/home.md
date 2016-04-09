@@ -10,7 +10,7 @@ For android developers, <a href="https://github.com/brooth/androjeta">Androjeta<
 
 At a glance:
 --------
-`Jeta` provides a number of useful annotations that might help your to develop java programs quicker and safer. Let's take a look on a simple example:
+`Jeta` provides a [number](/guide) of useful annotations that might help your to develop java programs quicker and safer. Let's take a look on a simple example:
 
 ### @Log
 Named loggers can be supplied into your classes using `Log` annotation. By default, the logger has a name of the host (master) class:
@@ -18,14 +18,14 @@ Named loggers can be supplied into your classes using `Log` annotation. By defau
     :::java
     class LogSample {
         @Log
-        Logger logger;
+        AnyLogger logger;
     }
 
 instead of:
 
     :::java
     class LogSample {
-        private static final Logger logger = LoggerFactory.getLogger(LogSample.class);
+        private final Logger logger = LoggerFactory.getLogger(LogSample.class);
     }
 
 The second approach instigates copy-paste. It's often forgotten to replace the class name, so loggers might have incorrect names. The first code snippet doesn't cause any issues and `logger` has a name `LogSample` as you expect.
@@ -41,12 +41,12 @@ Installation (gradle):
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.0'
-        compile 'org.brooth.jeta:jeta:1.0'
+        apt 'org.brooth.jeta:jeta-apt:1.1'
+        compile 'org.brooth.jeta:jeta:1.1'
     }
 
-<span class="label label-info">Note</span> Jeta is an annotation processing tool, so you need an `apt` plugin either:
-[gradle apt plugins](https://plugins.gradle.org/search?term=apt)
+Complete Installation guide is on [this page](/guide/install)
+
 
 License
 -------

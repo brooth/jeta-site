@@ -16,7 +16,7 @@ Easy to use [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) i
         }
     }
 
-Now you can fire an event:
+With `observers` you can fire an event:
 
     :::java
     observers.notify(event);
@@ -50,7 +50,7 @@ To create an `Observer`, put `@Observe` annotation on the method that accepts on
         }
     }
 
-<span class="label label-info">Note</span> You must define observable class, this method is listening to via the annotation argument.
+<span class="label label-info">Note</span> You must define the observables that the methods are listening to.
 
 The `handler` allows you to detatch your class from `observable`:
 
