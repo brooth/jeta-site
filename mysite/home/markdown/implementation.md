@@ -16,9 +16,7 @@ In a multi-module project might be a case when some feature needs to be implemen
     }
 
     interface DbDriver {
-        void connect();
-        ResultSet query(String sql);
-        // others...
+        // methods to work with a db...
     }
 
 In the module, we need to use `DbManger`, we provide the implementation:
@@ -29,7 +27,7 @@ In the module, we need to use `DbManger`, we provide the implementation:
         //...
     }
 
-Furthermore, in the test module we can substitude the driver with a fake one:
+Furthermore, in the test module we can substitute the driver with a fake one:
 
     :::java
     @Implementation(DbDriver.class, priority = 100)

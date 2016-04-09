@@ -18,7 +18,7 @@
         Map<EventType, EventHandler> handlers;
     }
 
-Commonly used practice, is to create an xml file and register all the handlers in it. In the event manager we must parse the xml and load these handlers through `Class.forName()`:
+Commonly used practice is to create an xml file and register all the handlers in it. In the event manager we must parse the xml and load these handlers through `Class.forName()`:
 
     :::java
     class HandlerOne implements EventHandler {
