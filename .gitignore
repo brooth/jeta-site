@@ -2,4 +2,5 @@ env
 *.pyc
 .vimsession
 .ropeproject/
+logs/
 mysite/mysite/settings.py

@@ -49,7 +49,7 @@ To create an `Observer`, put `@Observe` annotation on the method that accepts on
         void onEvent(Event event) {
         }
     }
-                
+
 <span class="label label-info">Note</span> You must define observable class, this method is listening to via the annotation argument.
 
 The `handler` allows you to detatch your class from `observable`:
