@@ -12,8 +12,8 @@ Add next lines to your `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.androjeta:androjeta-apt:1.1'
-        compile 'org.brooth.androjeta:androjeta:1.1'
+        apt 'org.brooth.jeta:jeta-apt:1.1'
+        compile 'org.brooth.jeta:jeta:1.1'
     }
 
 
@@ -78,7 +78,7 @@ Complete `build.gradle`:
             }
         }
         dependencies {
-            classpath 'net.ltgt.gradle:gradle-apt-plugin:0.5'
+            classpath 'net.ltgt.gradle:gradle-apt-plugin:+'
         }
     }
 
@@ -93,8 +93,8 @@ Complete `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.androjeta:androjeta-apt:1.0'
-        compile 'org.brooth.androjeta:androjeta:1.0'
+        apt 'org.brooth.jeta:jeta-apt:1.1'
+        compile 'org.brooth.jeta:jeta:1.1'
     }
 
 At this point, you can start using `Jeta`, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config) to find details.

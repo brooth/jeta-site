@@ -5,7 +5,7 @@ Metaprogramming is achieved by code generating which makes programs fast and sta
 So if you are dissatisfied with `Java Reflection`, welcome to aboard :)
 
 <div class="alert alert-success" role="alert">
-For android developers, <a href="https://github.com/brooth/androjeta">Androjeta</a> is the better way to go.
+For android developers, <a href="/guide/androjeta/overview">Androjeta</a> is the better way to go.
 </div>
 
 At a glance:

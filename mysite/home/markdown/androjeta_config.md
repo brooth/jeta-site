@@ -1,3 +1,3 @@
 <div class="page-header">
-	<h2></h2>
+    <h2>Configuration</h2>
 </div>
