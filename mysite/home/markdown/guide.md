@@ -26,7 +26,5 @@
 
 ### Advanced
 * [Advantages in multi-module projects](/guide/multi-modules)
-* [How to customize Jeta](/guide/customize)
 * [Write your first annotation processor](/guide/custom-processor)
 * [How to implement custom metasitory](/guide/custom-metasitory)
-* [Create your own annotation processing framework powered by Jeta](/guide/extending)

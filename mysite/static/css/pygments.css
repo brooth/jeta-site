@@ -14,6 +14,8 @@
 .codehilite .kr { color: #0000FF } /* Keyword.Reserved */
 .codehilite .kt { color: #0000FF } /* Keyword.Type */
 .codehilite .s { color: #009C00 } /* Literal.String */
+.codehilite .nt { color: blue } /* xml tags */
+.codehilite .na { color: #C15858 } /* xml attributes */
 .codehilite .nc { color: #007575 } /* Name.Class */
 .codehilite .nd { color: #CC00A3 } /* Name.Decorator */
 .codehilite .nf { color: #C34E00 } /* Name.Function */

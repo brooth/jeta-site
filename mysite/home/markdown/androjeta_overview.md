@@ -2,7 +2,9 @@
     <h2>Androjeta</h2>
 </div>
 
-### Java Reflection as a bad manner
+In addition to the number of `Jeta` features, that are available on Android platform as well, `Androjeta` adds some extra which are craving to make your life easy.
+
+### `Java reflection` as a bad manner
 
 Despite the fact that mobile phones might give odds to personal computers, it is a bad manner nowadays to use `java reflection` in android projects. At least the time, the manufacturers will offer the better batteries, the frameworks that build on `java reflection` are not rivals to ones that built on `javax.annotation.processing` like `Jeta`.
 

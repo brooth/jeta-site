@@ -25,25 +25,28 @@ To bind the `TextView` into our Activity:
     class SampleActivity extends BaseActivity {
         @FindView
         TextView textView;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_sample);
-            MetaHelper.findViews(this);
-        }
     }
 
 How does it work? Well, by default Androjeta composes the ID as:
 
-    :::
-    <Activity name> (from lowercase) + "_" (underscore) + <field name>
+`<Activity name> (from lowercase) + "_" (underscore) + <field name>`
 
-As we expect, ror out example it would be "sampleActivity_textView".
+As we expect, for out example it would be "sampleActivity_textView".
 
 <span class="label label-info">Note</span>You shouldn't distrust this approach. In case of misspelling, it fails at compile-time. On the other hand, it helps you to keep your code clean and in one style.
 
-For sure, if it's needed, you can pass whatever ID you want:
+Here is the `BaseActivity`:
+
+    :::java
+    class BaseActivity extends Activity {
+        @Override
+        public void setContentView(int layoutResID) {
+            super.setContentView(layoutResID);
+            MetaHelper.findViews(this);
+        }
+    }
+
+For sure, you can pass whatever `R.id` you want:
 
     :::java
     class SampleActivity extends BaseActivity {
@@ -51,7 +54,7 @@ For sure, if it's needed, you can pass whatever ID you want:
         TextView textView;
     }
 
-or, what important for `aar` modules, it's allowed to pass only ID name as a string:
+or, what important for library modules (`aar`), it's allowed to pass only ID name as a string:
 
     :::java
     class SampleActivity extends BaseActivity {
