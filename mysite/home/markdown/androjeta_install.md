@@ -34,5 +34,5 @@
     }
 
 
-Go to the [configuration guide](/guide/androjeta/config) to know about what `apt-arguments` is for.
+Go to the [configuration guide](/guide/config) to know about what `apt-arguments` is for.
 
