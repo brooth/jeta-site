@@ -115,7 +115,7 @@ For sure we need to create those annotations:
 
     :::java
     package com.example;
-    
+
     public @interface NotCheater {
     }
 
@@ -149,7 +149,7 @@ Certainly `Jeta` provides aliases for its validators. Look up them in `org.broot
         }
     }
 
-<span class="label label-warning">Pay attension</span> Before version 2.0 the annotations must be already compiled into byte-code in order to use them as the aliases.
+<span class="label label-warning">Pay attension</span> Prior to version 2.0 the annotations must be already compiled into byte-code in order to use them as the aliases.
 
 ###MetaHelper
 
