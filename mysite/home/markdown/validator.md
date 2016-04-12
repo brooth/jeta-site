@@ -7,9 +7,9 @@
     :::java
     public class HireAction {
         @Validate(NotBlank.class)
-        protected String name;
+        String name;
         @Validate(NotEmpty.class)
-        protected String[] degrees;
+        String[] degrees;
 
         public HireAction(String name, String... degrees) {
             this.name = name;
@@ -31,7 +31,7 @@ Well, it is clear enough, but let's clarify. `NotBlank` validator checks a strin
 `Jeta` comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. Nevertheless, you can create any you need. For the illustration let's print the listing of `NotNull` so you can write others similarly:
 
     :::java
-    public class NotNull implements Validator {
+    public class NotNull implements Validator<Object, Object> {
         private String fieldName;
 
         @Override
@@ -49,18 +49,18 @@ Well, it is clear enough, but let's clarify. `NotBlank` validator checks a strin
 
 ###MetaValidator
 
-If we try to use `NotBlank` validator on a `Double` field, the code will be compiled well but the validator will throw `IllegalArgumentException` at runtime. This behavior is predictable but not follows the `Jeta` conception. So, if you need validators that can be applied on matched fields only you should use `MetaValidator` instead.
+`MetaValidator` allows to to create more complex validators. Assume we need to access to master's fields, e.g. to check a sum of any. Of course we can create an interface, declare the methods for these fields, implement this interface. But it's simpler to use `MetaValidator` instead:
 
     :::java
     public class HireAction {
         @Validate(NotBlank.class)
-        public String name;
+        String name;
         @Validate(NotEmpty.class)
-        public String[] degrees;
+        String[] degrees;
         @Validate(AgeValidator.class)
-        public int age;
+        int age;
         @Validate(ExperienceValidator.class)
-        public int experience;
+        int experience;
 
         public HireAction(String name, int age, int experience, String... degrees) {
             this.name = name;
@@ -91,7 +91,7 @@ If we try to use `NotBlank` validator on a `Double` field, the code will be comp
     )
     public interface ExperienceValidator extends Validator {}
 
-If you use `AgeValidator` on a string field, it will fail during compilation. How does it work? `$f` is replaced with the field, it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need to. Before the compilation, `Jeta` will create java code by these strings, so, in case of misspelling, it won't be assembled. As well as expression `master.str > 18` where, of course, `str` is a string field.
+As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? `$f` is replaced with the field, it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need to. Before the compilation, `Jeta` will create java code by these strings, so, in case of misspelling, it won't be assembled.
 
 ###ValidatorAlias
 
@@ -125,13 +125,13 @@ Certainly `Jeta` provides aliases for its validators. Look up them in `org.broot
     :::java
     public class HireAction {
         @NotBlank
-        public String name;
+        String name;
         @NotEmpty
-        public String[] degrees;
+        String[] degrees;
         @NotYoung
-        public int age;
+        int age;
         @NotCheater
-        public int experience;
+        int experience;
 
         public HireAction(String name, int age, int experience, String... degrees) {
             this.name = name;
@@ -149,6 +149,7 @@ Certainly `Jeta` provides aliases for its validators. Look up them in `org.broot
         }
     }
 
+<span class="label label-warning">Pay attension</span> Before version 2.0 the annotations must be already compiled into byte-code in order to use them as the aliases.
 
 ###MetaHelper
 

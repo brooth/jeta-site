@@ -2,7 +2,7 @@
     <h2>Androjeta</h2>
 </div>
 
-In addition to the number of `Jeta` features, that are available on Android platform as well, `Androjeta` adds some extra which are craving to make your life easy.
+In addition to the number of `Jeta` features, that are available on Android platform as well, `Androjeta` adds some extra.
 
 ### `Java reflection` as a bad manner
 

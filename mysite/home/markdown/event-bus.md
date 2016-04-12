@@ -66,7 +66,7 @@ Two filters are available out of the box, by `id` and by `topic`. You can define
     protected void onMessage(Message msg) {
     }
 
-<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must implement `Message` interface or extend `BaseMessage` class. 
+<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must be implemented `Message` interface or extended `BaseMessage` class. 
 
 
 ### MetaFilters
@@ -77,13 +77,13 @@ As it mentioned in the previous articles, `Jeta` is designed to detect errors at
     public class MyMessage extends BaseMessage {
     }
 
-    public class MyFilter implements Filter<MyMessage> {
+    public class MyFilter implements Filter<Object, MyMessage> {
         public boolean accepts(Object master, String methodName, Message msg) {
             return true;
         }
     }
 
-If we try to use this filter on a method that accepts not assigneble from `MyMessage` class as the event, the code won't be compiled. But `MetaHelper` allows you to write more complex checks, e.g. access to a nonprivate constant:
+If we try to use this filter on a method with a parameter which not assigneble from `MyMessage` class, the code won't be compiled. But `MetaHelper` allows you to write more complex checks, e.g. access to a nonprivate constant:
 
     :::java
     @MetaFilter(emitExpression = "$m.THE_NUMBER % 2 == 0")
