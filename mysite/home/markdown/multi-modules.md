@@ -2,9 +2,9 @@
     <h2>Multi-Module Projects</h2>
 </div>
 
-Multi-module projects is the place where `Jeta` does its best. You can share metacode between modules, override behavior, substitute classes and so on. It also should be important for any project, since projects are frequently composed of at least couple of modules - main and test.
+Multi-module projects is the place where *Jeta* does its best. You can share metacode between modules, override behavior, substitute classes and so on. It also should be important for any project, since projects are frequently composed of at least couple of modules - main and test.
 
-As it mentioned in ["dependency injection" article](/guide/inject), you are allowed to extend providers. To make that possible, you must create one code-base for all your modules. In this tutorial, we will stick the approach that we used in the previous guides - `MetaHelper`, which holds singleton instance of the metasitory.
+As it mentioned in ["dependency injection" article](/guide/inject), you are allowed to extend providers. To make that possible, you must create one code-base for all your modules. In this tutorial, we will stick the approach that we used in the previous guides - *MetaHelper*, which holds singleton instance of the metasitory.
 
 Projects can include as many modules as it's needed and the helper methods can be used in any of these modules. However, for this guide we are using two - main and test.
 
@@ -45,7 +45,7 @@ Let's walk through an example, in which we need to substitute an entity that is 
     }
 
 
-By default, the implementation is provided by itself. In `MetaHelper`, instead of creating `AppScope` we're looking up its implementation.
+By default, the implementation is provided by itself. In *MetaHelper*, instead of creating `AppScope` we're looking up its implementation.
 
     :::java
     public class MetaHelper {

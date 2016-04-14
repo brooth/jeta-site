@@ -2,7 +2,7 @@
     <h2>Validators</h2>
 </div>
 
-`Jeta` provides validation framework. Let's find out why it's better than the rivals. For this example, let's assume we have an action that hires employees on a job.
+*Jeta* provides validation framework. Let's find out why it's better than the rivals. For this example, let's assume we have an action that hires employees on a job.
 
     :::java
     public class HireAction {
@@ -28,7 +28,7 @@
 
 Well, it is clear enough, but let's clarify. `NotBlank` validator checks a string is not blank, `NotEmpty` checks arrays, collections or a string is not emplty. `MetaHelper.validate()` will throw `ValidationException` in case of validation errors, `MetaHelper.validateSafe()` will return these errors in a list.
 
-`Jeta` comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. Nevertheless, you can create any you need. For the illustration let's print the listing of `NotNull` so you can write others similarly:
+*Jeta* comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. Nevertheless, you can create any you need. For the illustration let's print the listing of `NotNull` so you can write others similarly:
 
     :::java
     public class NotNull implements Validator<Object, Object> {
@@ -91,7 +91,7 @@ Well, it is clear enough, but let's clarify. `NotBlank` validator checks a strin
     )
     public interface ExperienceValidator extends Validator {}
 
-As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? `$f` is replaced with the field, it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need to. Before the compilation, `Jeta` will create java code by these strings, so in case of misspelling, it won't be assembled.
+As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? `$f` is replaced with the field, it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need to. Before the compilation, *Jeta* will create java code by these strings, so in case of misspelling, it won't be assembled.
 
 ###ValidatorAlias
 
@@ -101,7 +101,7 @@ As you probably noticed, `ExperienceValidator` uses `age` field for the check. B
     validator.alias.com.example.NotYoung = com.example.AgeValidator
     validator.alias.com.example.NotCheater = com.example.ExperienceValidator
 
- <span class="label label-info">Note</span> Put `validator.alias.` prefix before the annotation in order to indicate `Jeta` about new alias.
+ <span class="label label-info">Note</span> Put `validator.alias.` prefix before the annotation in order to indicate *Jeta* about new alias.
 
 For sure we need to create those annotations:
 
@@ -120,7 +120,7 @@ For sure we need to create those annotations:
     }
 
 
-Certainly `Jeta` provides aliases for its validators. Look up them in `org.brooth.jeta.validate.alias` package. Well, due to `ValidatorAlias` code looks cleaner:
+Certainly *Jeta* provides aliases for its validators. Look up them in `org.brooth.jeta.validate.alias` package. Well, due to `ValidatorAlias` code looks cleaner:
 
     :::java
     public class HireAction {

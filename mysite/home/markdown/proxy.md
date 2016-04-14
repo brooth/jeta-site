@@ -25,7 +25,7 @@ The main aspect of `Jeta Proxy` is that you need to create an abstract class and
         }
     }
 
-Be aware that you can access to the real `Ping` instance via `real()` method. So, in this example, we invoke real implementation and divide its result on two. To wrap an object we will use `MetaHelper` for:
+Be aware that you can access to the real `Ping` instance via `real()` method. So, in this example, we invoke real implementation and divide its result on two. To wrap an object we will use *MetaHelper* for:
 
 
     :::java
@@ -54,4 +54,4 @@ The helper method for `Proxy` feature would be:
         new ProxyController(getInstance().metasitory, master).createProxy(real);
     }
 
-Please, follow [this link](/guide/meta-helper) if you have questions about `MetaHelper`.
+Please, follow [this link](/guide/meta-helper) if you have questions about *MetaHelper*.

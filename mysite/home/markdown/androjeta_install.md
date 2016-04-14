@@ -3,7 +3,7 @@
 </div>
 
 
-`Androjeta` installation is similar to the [installation](/guide/install) of `Jeta`. But here it's recommended to use [android-apt plugin by Hugo Visser](https://bitbucket.org/hvisser/android-apt) as the plugin. Here is the complete listing:
+*Androjeta* installation is similar to the [installation](/guide/install) of *Jeta*. But here it's recommended to use [android-apt plugin by Hugo Visser](https://bitbucket.org/hvisser/android-apt) as the plugin. Here is the complete listing:
 
     :::groovy
     buildscript {

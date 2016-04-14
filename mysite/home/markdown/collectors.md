@@ -103,7 +103,7 @@ As you expect, `MetaHelper.collectTypes` will return a collection of `HandlerOne
 
 ###MetaHelper
 
-Add the following methods into `MetaHelper` in order to use these features.
+Add the following methods into *MetaHelper* in order to use these features.
 
     :::java
     public static List<Class<?>> collectTypes(Class<?> masterClass, Class<? extends Annotation> annotationClass) {

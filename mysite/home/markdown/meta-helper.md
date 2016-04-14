@@ -2,7 +2,7 @@
   <h2>Meta Helper</h2>
 </div>
 
-`MetaHelper` is not a class provided by `Jeta`. It's just a way to organize metacode invocation in your project. If you are not comfortable with static helpers you shouldn't use it in your project. This class is used as an entry point to the framework's features. You can hold a singleton of the metasitory in it and pass it to the controllers:
+*MetaHelper* is not a class provided by *Jeta*. It's just a way to organize metacode invocation in your project. If you are not comfortable with static helpers you shouldn't use it in your project. This class is used as an entry point to the framework's features. You can hold a singleton of the metasitory in it and pass it to the controllers:
 
     :::java
     public class MetaHelper {
@@ -58,7 +58,7 @@ Ones your defined `createLoggers()`, you can provide loggers into your classes:
 
 
 ### Hello, World!
-Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime). Its `MetaHelper` will be:
+Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime). Its *MetaHelper* will be:
 
     :::java
     public class MetaHelper {

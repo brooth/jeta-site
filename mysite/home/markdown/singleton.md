@@ -4,7 +4,7 @@
 
 ###Singleton
 
-`Singleton` is the less useful feature of `Jeta`. You can use it if you feel too lazy and for example in tests when you need a thread-safe singleton.
+`Singleton` is the less useful feature of *Jeta*. You can use it if you feel too lazy and for example in tests when you need a thread-safe singleton.
 
     :::java
     @Singleton

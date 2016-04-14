@@ -2,7 +2,7 @@
     <h2>Dependency Injection</h2>
 </div>
 
-Dependency injection is the most powerful part of `Jeta` . Besides of the commontly used `DI` features, it offers some extra:
+Dependency injection is the most powerful part of *Jeta* . Besides of the commontly used `DI` features, it offers some extra:
 
 * Inject entities with parameters
 * Extend the entities
@@ -17,7 +17,7 @@ Before we start, let's define a helper method we will be inject with:
     }
 
 
-Please, read [this article](/guide/meta-helper) first, if you have questions about `MetaHelper`.
+Please, read [this article](/guide/meta-helper) first, if you have questions about *MetaHelper*.
 
 <a name="MetaEntity"></a>
 ### MetaEntity

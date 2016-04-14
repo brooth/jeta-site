@@ -2,8 +2,8 @@
 <h2>Configuration</h2>
 </div>
 
-In order to configure `Jeta`, you need to create `jeta.properties` file in the root package of the source set. It's a plain java properties file, with `key=value` format.
-By default, `Jeta` is not allowed to get the path to the source directory, so you need to provide it by yourself. There are two common ways to do that. First one is to declare `sourcepath` option in your `build.gradle`:
+In order to configure *Jeta*, you need to create `jeta.properties` file in the root package of the source set. It's a plain java properties file, with `key=value` format.
+By default, *Jeta* is not allowed to get the path to the source directory, so you need to provide it by yourself. There are two common ways to do that. First one is to declare `sourcepath` option in your `build.gradle`:
 
 ### `build.gradle`
 

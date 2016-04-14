@@ -2,7 +2,7 @@
     <h2>Custom Metasitory</h2>
 </div>
 
-If you want to create your own `Metasitory` implementation to use it in your project, well, `Jeta` allows that too. In this guide, we'll create one that based on an `XML` file. I don't think it's a good idea but it's good enough for the illustration.
+If you want to create your own `Metasitory` implementation to use it in your project, well, *Jeta* allows that too. In this guide, we'll create one that based on an `XML` file. I don't think it's a good idea but it's good enough for the illustration.
 
 So, the idea here is that we want to generate `XML` file which holds all the needed information about metacode: masters, their metacode and the annotations they use.
 
@@ -63,7 +63,7 @@ First, we need to create a `MetasitoryWrite`. This class generates a metacode st
         }
     }
 
-To say to `Jeta` use this metasitory writer, add this property into `jeta.properties`:
+To say to *Jeta* use this metasitory writer, add this property into `jeta.properties`:
 
     :::properties
     metasitory.writer=com.example.metasitory.XmlMetasitoryWriter
@@ -75,11 +75,12 @@ After you assemble your project, we'll see `metasitory.xml` file in `build/gener
     <?xml version="1.0" encoding="UTF-8"?>
     <items>
         <item master="com.example.HelloWorldSample" metacode="com.example.HelloWorldSample_Metacode">
-        <annotation>com.example.SayHello</annotation>
-    </item>
+            <annotation>com.example.SayHello</annotation>
+        </item>
+    </items>
 
 
-We won't create actual `Metasitory` implementation for this file. There is no difficulties to do that though. It parses `metasitory.xml` and use its structure to search metacode by given `Criteria`. Here is the listing of `Metasitory` interface it must implement in order to support `Jeta` API:
+We won't create actual `Metasitory` implementation for this file. There is no difficulties to do that though. It parses `metasitory.xml` and use its structure to search metacode by given `Criteria`. Here is the listing of `Metasitory` interface it must implement in order to support *Jeta* API:
 
     :::java
     public interface Metasitory {

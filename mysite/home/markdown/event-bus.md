@@ -2,7 +2,7 @@
     <h2>Event bus</h2>
 </div>
 
-`Jeta` providers an implementation of [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish-subscribe_pattern). Besides basic features, it has a great achievement - no reflection is used. Excited? Let's go though it.
+*Jeta* providers an implementation of [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish-subscribe_pattern). Besides basic features, it has a great achievement - no reflection is used. Excited? Let's go though it.
 
 ###Subscriber
 
@@ -71,7 +71,7 @@ Two filters are available out of the box, by `id` and by `topic`. You can define
 
 ### MetaFilters
 
-As previously mentioned, `Jeta` is designed to detect errors at compile-time as far as possible. With plain filters this principle work with message types. Let's say we have a filter that work with a particular message type:
+As previously mentioned, *Jeta* is designed to detect errors at compile-time as far as possible. With plain filters this principle work with message types. Let's say we have a filter that work with a particular message type:
 
     :::java
     public class MyMessage extends BaseMessage {
@@ -83,7 +83,7 @@ As previously mentioned, `Jeta` is designed to detect errors at compile-time as 
         }
     }
 
-If we try to use this filter on a method with a parameter which not assigneble from `MyMessage` class, the code won't be compiled. But `MetaHelper` allows you to write more complex checks, e.g. access to a nonprivate constant:
+If we try to use this filter on a method with a parameter which not assigneble from `MyMessage` class, the code won't be compiled. But *MetaHelper* allows you to write more complex checks, e.g. access to a nonprivate constant:
 
     :::java
     @MetaFilter(emitExpression = "$m.THE_NUMBER % 2 == 0")
@@ -103,4 +103,4 @@ You can either use Jeta's basic implementation of `EventBus` - `org.brooth.jeta.
             .registerSubscriber(bus);
     }
 
-You should definitely follow [this link](/guide/meta-helper) if you are still not familiar with `MetaHelper`.
+You should definitely follow [this link](/guide/meta-helper) if you are still not familiar with *MetaHelper*.

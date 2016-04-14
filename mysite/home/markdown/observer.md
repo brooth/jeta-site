@@ -88,7 +88,7 @@ In the examples above we use two helper methods. Their code would be:
             .registerObserver(observable);
     }
 
-Please, read [this article](/guide/meta-helper) if you have questions about `MetaHelper`.
+Please, read [this article](/guide/meta-helper) if you have questions about *MetaHelper*.
 
 You should also become acquainted with [event-bus features](/guide/event-bus) in addition to this guide.
 
