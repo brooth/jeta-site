@@ -6,7 +6,7 @@
 
 First of all, we must create a separate module since a processor and all the corresponding code is needed at compile time only. Also, this module must be compiled into byte-code before in order to be passed to `javac` as the annotation processor.
 
-There are no special requirements for this module. It is a plain `java` project. Assume we named it "HelloWorldSampleApt" and used `gradle` of course:
+There are no special requirements for this module. It is a plain `java` project. Assume we named it "HelloWorldSampleApt" and certainly used `gradle` to build:
 
     :::groovy
     apply plugin: 'java'
