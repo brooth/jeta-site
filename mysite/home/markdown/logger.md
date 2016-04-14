@@ -4,7 +4,7 @@
 
 In this tutorial, we will go through the logger provider feature that `Jeta` has. It's not the most complex part of the library but it is useful and time saver, though.
 
-So, whatever logging framework is used in your project, now you can supply it with `@Log` annotation. To be able to do so, you need to define a `NamedLoggerProvider`:
+So whatever logging framework is used in your project, now you can supply it with `@Log` annotation. To be able to do so, you need to define a `NamedLoggerProvider`:
 
     :::java
     import org.brooth.jeta.log.NamedLoggerProvider;

@@ -4,7 +4,7 @@
 
 `Jeta` providers an implementation of [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish-subscribe_pattern). Besides basic features, it has a great achievement - no reflection is used. Excited? Let's go though it.
 
-###Subscriber 
+###Subscriber
 
     :::java
     class Subscriber {
@@ -18,7 +18,7 @@
         protected void onMessage(Message msg) {
         }
     }
-    
+
 
 As the [observer's handler](/guide/observer), `SubscriptionHandler` gives you an ability to control subscription workflow. You can stop listening a message:
 
@@ -66,12 +66,12 @@ Two filters are available out of the box, by `id` and by `topic`. You can define
     protected void onMessage(Message msg) {
     }
 
-<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must be implemented `Message` interface or extended `BaseMessage` class. 
+<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must be implemented `Message` interface or extended `BaseMessage` class.
 
 
 ### MetaFilters
 
-As it mentioned in the previous articles, `Jeta` is designed to detect errors at compile-time as far as possible. With plain filters this principle work with message types. Let's say we have a filter that work with a particular message type:
+As previously mentioned, `Jeta` is designed to detect errors at compile-time as far as possible. With plain filters this principle work with message types. Let's say we have a filter that work with a particular message type:
 
     :::java
     public class MyMessage extends BaseMessage {
@@ -90,7 +90,7 @@ If we try to use this filter on a method with a parameter which not assigneble f
     public interface EvenMetaFilter extends Filter {}
 
 
-`$m` is replaced with the master class, that uses this filter. So, if the master doesn't have `THE_NUMBER` field, it will fail during compilation. You can also use `$e` to get access to the message instance.
+`$m` is replaced with the master class, that uses this filter. So if the master doesn't have `THE_NUMBER` field, it will fail during compilation. You can also use `$e` to get access to the message instance.
 
 
 ### MetaHelper

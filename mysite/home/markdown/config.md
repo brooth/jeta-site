@@ -22,7 +22,7 @@ The other way is available via `apt` arguments. Note that you need a plugin that
     }
 
 ### `jeta.properties`
-Let's go through the options that available to config code generating. As it's already mentioned, in the previous article, the most needed property is `metasitory.package`. It must be unique for any module, e.g. test module. This package you will need to provide to `MapMetasitory` constructor at runtime to be able to use this metasitory. The other options are described below as comments:
+Let's go through the options that available to config code generating. As already mentioned, in the previous article, the most needed property is `metasitory.package`. It must be unique for any module, e.g. test module. This package you will need to provide to `MapMetasitory` constructor at runtime to be able to use this metasitory. The other options are described below as comments:
 
     :::properties
     # Source directory path. Absolute or relative to `jeta.properties` path

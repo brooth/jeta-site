@@ -18,7 +18,9 @@ With `@OnClick` and `@OnLongClick` annotations you can use methods as `android.v
 
 As well as in case of [@FindView](/guide/androjeta/findviews), Androjeta composes the ID by default:
 
-`<Activity name> (from lowercase) + "_" (underscore) + <method name without prefix "onClick" or "onLongClick" resp.>`
+`<lowercased activity name> + "_" (underscore) + <method name without prefix>`
+
+Where `prefix` is  "onClick" or "onLongClick" respectively.
 
 <span class="label label-info">Note</span> For sure no reasons to distrust this approach. In case of misspelling, the code won't be assembled.
 

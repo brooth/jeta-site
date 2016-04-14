@@ -22,7 +22,7 @@ Please, read [this article](/guide/meta-helper) first, if you have questions abo
 <a name="MetaEntity"></a>
 ### MetaEntity
 
-However, let's start with a simple case:
+However, let's start with a straightforward case:
 
     :::java
     @MetaEntity
@@ -65,7 +65,7 @@ Besides of straight injection, you can provide it via `Lazy`, `Provider` or inje
 
 <span class="label label-info">Note</span> `Lazy` class provides a single instance of a meta entity and initializes it on demand. `Provider` requests for a new instance each invocation. `Class<? extends >` is useful for a multi-module project where an entity can be [extended](#Extending) by another.
 
-As it's mentioned, `Jeta DI` allows you to inject entities with parameters:
+As previously written, `Jeta DI` allows you to inject entities with parameters:
 
     :::java
     @MetaEntity
@@ -92,7 +92,7 @@ As it's mentioned, `Jeta DI` allows you to inject entities with parameters:
 
 
 <div class="alert alert-success" role="alert">
-Note that the injection expression must match to the entity construction, i.e. you can't inject an entity without meta factory if there is no empty constructor for, otherwise the code won't be compiled. This aspect makes <code>Jeta DI</code> more helpful for development, so, if the code is compiled it should work properly.
+Note that the injection expression must match to the entity construction, i.e. you can't inject an entity without meta factory if there is no empty constructor for, otherwise the code won't be compiled. This aspect makes <code>Jeta DI</code> more helpful for development, so if the code is compiled it should work properly.
 </div>
 
 
@@ -307,7 +307,7 @@ Also, change the scope from `HelloWorldScope` to `HelloUniverseScope` in the hel
 
 At this point, `Jeta DI` will inject `Hello, Universe!` into `str` as you expect. But, let's clarify what is happening in the listing above.
 
-`@Scope(ext)` - allows you to use a scope as the scope it extends from. So, we can provide `Hello, World!` string using `MetaScope<HelloUniverseScope>` in our example as well. Nevertheless, the real benefit is that you can replace the providers from super scope with new ones. For this purpose we created `StringProviderExt` and pointed its scope to `HelloUniverseScope`.
+`@Scope(ext)` - allows you to use a scope as the scope it extends from. So we can provide `Hello, World!` string using `MetaScope<HelloUniverseScope>` in our example as well. Nevertheless, the real benefit is that you can replace the providers from super scope with new ones. For this purpose we created `StringProviderExt` and pointed its scope to `HelloUniverseScope`.
 
 Apart from direct extending, it's allowed to substitude the super entities as well. To illustrate that, let's extend our [`Producer`](#MetaEntity) entity:
 

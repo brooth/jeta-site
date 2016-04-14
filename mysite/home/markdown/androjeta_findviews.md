@@ -29,7 +29,7 @@ To bind the `TextView` into our Activity:
 
 How does it work? Well, by default Androjeta composes the ID as:
 
-`<Activity name> (from lowercase) + "_" (underscore) + <field name>`
+`<lowercased activity name> + "_" (underscore) + <field name>`
 
 As we expect, for out example it would be "sampleActivity_textView".
 

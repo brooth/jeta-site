@@ -91,7 +91,7 @@ Well, it is clear enough, but let's clarify. `NotBlank` validator checks a strin
     )
     public interface ExperienceValidator extends Validator {}
 
-As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? `$f` is replaced with the field, it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need to. Before the compilation, `Jeta` will create java code by these strings, so, in case of misspelling, it won't be assembled.
+As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? `$f` is replaced with the field, it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need to. Before the compilation, `Jeta` will create java code by these strings, so in case of misspelling, it won't be assembled.
 
 ###ValidatorAlias
 
