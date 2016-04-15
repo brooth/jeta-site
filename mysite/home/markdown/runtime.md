@@ -19,16 +19,16 @@ The *Criteria* provides a way for defining quiries to a metasitory. In most case
 *Controller* searches for requited metacode using *Criteria* and applies it to the *master*. Well, it's just a common case and some controllers do more complex work.
 
 ### Hello, World!
-Let's continue to observe the *Hello, World!* example, from the [previous guide](/guide/code-generating), and find out how to apply the metacode to the sample class:
+Let's continue to observe the *Hello, World!* example, from the [previous guide](/guide/code-generating), and find out how to apply the metacode to the sample class.
 
-First, we need to declare an interface. It will be implemented by metacodes generated for `@SayHello` users (you might note for this interface in the previous article):
+At first, we need to declare an interface which will be implemented by metacodes generated for `@SayHello` users (you might note for this interface in the previous article):
 
     :::java
     public interface HelloWorldMetacode<M> {
         void setHelloWorld(M master);
     }
 
-And the controller:
+Secondly, create the controller:
 
     :::java
     public class HelloWorldController {
@@ -48,13 +48,13 @@ And the controller:
         }
     }
 
-<span class="label label-info">Note</span> This controller searches for the metacode by itself for the illustration. The better way is to extend `MasterController` which does it for you.
+<span class="label label-info">Note</span> This controller creates a *Criteria* and searches for the metacode by itself for demonstration. The better way is to extend `MasterController` which does it for you.
 
 Finally, we need to create a helper method in our *MetaHelper* class:
 
     :::java
     public static void setHelloWorld(Object master) {
-        new HelloWorldController(getInstance().metasitory, master).apply();
+        new HelloWorldController(metasitory, master).apply();
     }
 
 What the *MetaHelper* is for and how to organize it in your project is explained in the [next article](/guide/meta-helper)

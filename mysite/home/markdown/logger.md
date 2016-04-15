@@ -2,9 +2,7 @@
     <h2>Logger Provider</h2>
 </div>
 
-In this tutorial, we will go through the logger provider feature that *Jeta* has. It's not the most complex part of the library but it is useful and time saver, though.
-
-So whatever logging framework is used in your project, now you can supply it with `@Log` annotation. To be able to do so, you need to define a `NamedLoggerProvider`:
+In this tutorial, we will go through the logger providing feature. It's not the most complex framework's part but it is useful and time saver, though. It's allowed to use `@Log` with any logging tool. To do that you need to define a `NamedLoggerProvider`:
 
     :::java
     import org.brooth.jeta.log.NamedLoggerProvider;
@@ -23,21 +21,21 @@ So whatever logging framework is used in your project, now you can supply it wit
         }
     }
 
-As the next step you can pass it to `LogController`, but let's create a helper method in our *MetaHelper*:
+###MetaHelper
+
+The second step you should pass it to `LogController`, but let's create a helper method in our *MetaHelper*:
 
     :::java
     public static void createLogger(Object master) {
-        new LogController(getInstance().metasitory, master)
-            .createLoggers(MyLoggerProvider.getInstance();
+        new LogController(metasitory, master).createLoggers(MyLoggerProvider.getInstance();
     }
 
 If you are not familiar with *MetaHelper* you better to go thought [this guide](/guide/meta-helper) first.
 
-Now you are ready to provide the logger in your classes via `@Log` annotation.
-<span class="label label-info">Note</span> By default the name of the logger equals master's simple name. In case you need another one, you must define it as the annotation's argument - `@Log("MyName")`.
+Now, you're ready to supply the loggers in your classes through `@Log` annotation. <span class="label label-info">Note</span> By default the name of the logger equals master's simple name. If you need you can define different one via the annotation's argument - `@Log("MyName")`.
 
 ### Hello, World!
-Let's log out `Hello, World!` message from the [sample](/guide/code-generating#HelloWorldSample):
+Let's output `Hello, World!` message from [*HelloWorld*](/guide/code-generating#HelloWorldSample) sample.
 
     :::java
     public class HelloWorldSample {
@@ -54,7 +52,7 @@ Let's log out `Hello, World!` message from the [sample](/guide/code-generating#H
         }
     }
 
-The output would be like:
+The result would be like:
 
     :::bash
     > Info[HelloWorldSample]: Hello, World!
