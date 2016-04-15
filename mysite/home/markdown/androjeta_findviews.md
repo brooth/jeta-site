@@ -2,8 +2,7 @@
     <h2>FindView</h2>
 </div>
 
-`@FindView` allows you to bind UI-components from layouts into activities. You no longer have to use `findViewById()`, cast `View` to the actual class, pass the IDs from `R` file. Androjeta does it all for you by default.
-
+`@FindView` allows you to bind UI-components from the layouts into your activities. You no longer have to use `findViewById()`, cast `View` to the actual class, pass the IDs from `R` file. *Androjeta* does it all for you by default.
 
 Let's go through this feature with an example. Assume we have a layout:
 
@@ -31,9 +30,9 @@ How does it work? Well, by default Androjeta composes the ID as:
 
 `<lowercased activity name> + "_" (underscore) + <field name>`
 
-As we expect, for out example it would be "sampleActivity_textView".
+So, for our example it will be *"sampleActivity_textView"*.
 
-<span class="label label-info">Note</span>You shouldn't distrust this approach. In case of misspelling, it fails at compile-time. On the other hand, it helps you to keep your code clean and in one style.
+<span class="label label-info">Note</span> You shouldn't distrust this approach. In case of misspelling, it will fail at compile-time. On the other hand, it helps you to keep your code clean and in one style.
 
 Here is the `BaseActivity`:
 
@@ -54,7 +53,7 @@ For sure, you can pass whatever `R.id` you want:
         TextView textView;
     }
 
-or, what important for library modules (`aar`), it's allowed to pass only ID name as a string:
+or, what important for library modules (`aar` files), you can pass only ID as a string:
 
     :::java
     class SampleActivity extends BaseActivity {

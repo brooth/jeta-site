@@ -4,7 +4,7 @@
 
 ###Singleton
 
-`Singleton` is the less useful feature of *Jeta*. You can use it if you feel too lazy and for example in tests when you need a thread-safe singleton.
+*Singleton* is the less useful feature of *Jeta*. You can use it if you feel too lazy and for example in tests when you need a thread-safe singleton.
 
     :::java
     @Singleton
@@ -17,12 +17,12 @@
 
 ###Multiton
 
-Unlike `Singleton`, `Multiton` is a quite useful feature. If you have ever tried to implement thread-safe multiton pattern you would know. If you haven't, you can read [this thread](http://stackoverflow.com/questions/11126866/thread-safe-multitons-in-java) on StackOverFlow to be aware of.
+Unlike *Singleton*, *Multiton* is a quite useful feature. If you have ever tried to implement thread-safe multiton pattern you would know. If you haven't, you can read [this thread](http://stackoverflow.com/questions/11126866/thread-safe-multitons-in-java) on *StackOverFlow* to be aware of.
 
     :::java
     @Multiton
     public class MultitonSample {
-        static MultitonMetacode<MultitonSample> multiton = 
+        static MultitonMetacode<MultitonSample> multiton =
             MetaHelper.getMultiton(MultitonSample.class);
 
         public static MultitonSample getInstance(String key) {

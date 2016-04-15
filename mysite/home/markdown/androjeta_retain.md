@@ -2,7 +2,7 @@
     <h2>Retain</h2>
 </div>
 
-Androjeta helps to avoid usage of the most annoying boilerplate on android. No need anymore to use `onSaveInstanceState` callback to retain sensitive data. For those of you who are not familiar with this issue, here is the listing. In order to use fields for storing activity's state, you have to take care of its recovery in case of Android has [destroyed](http://developer.android.com/training/basics/activity-lifecycle/recreating.html) this activity.
+*Androjeta* lets you to avoid usage of one of the most annoying-boilerplate-required-thing on Android. No need anymore to use `onSaveInstanceState` callback to retain sensitive data. For those of you who are not familiar with this issue, here is the listing. In order to use fields for storing activity state, you have to take care of its recovery in case of Android has [destroyed](http://developer.android.com/training/basics/activity-lifecycle/recreating.html) this activity.
 
     :::java
     class SampleActivity extends Activity {
