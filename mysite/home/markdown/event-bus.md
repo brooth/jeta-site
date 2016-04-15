@@ -2,7 +2,7 @@
     <h2>Event bus</h2>
 </div>
 
-*Jeta* providers an implementation of [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish-subscribe_pattern). Besides basic features, it has a great achievement - no reflection is used. Excited? Let's go though it.
+*Jeta* providers an implementation of [*Publish-Subscribe* pattern](https://en.wikipedia.org/wiki/Publish-subscribe_pattern). Besides basic features, it has a great advantage - no reflection is used at all. Excited? Let's go through.
 
 ###Subscriber
 
@@ -19,8 +19,7 @@
         }
     }
 
-
-As the [observer's handler](/guide/observer), `SubscriptionHandler` gives you an ability to control subscription workflow. You can stop listening a message:
+As well as [observer's handler](/guide/observer), `SubscriptionHandler` lets you control subscription workflow. You can stop listening a message:
 
     :::java
     handler.unregister(Message.class);
@@ -32,28 +31,26 @@ or all of them:
 
 ### Priority
 
-It's allowed to order the handlers by priority. Handlers with higher priority will be invoked first:
+You're able to order the handlers by priority. Handlers with higher priority will be invoked first:
 
     :::java
     @Subscribe(priority = 146)
     protected void onMessage(Message msg) {
     }
 
-Handlers with the same priority are invoked randomly.
-
 ### Filters
 
-You can use handler filters in order to reject unwanter messages:
+*Jeta Event-Bus* supports filters, so you can reject unwanted messages:
 
     :::java
     @Subscribe(filters = { OddFilter.class })
     protected void onMessage(Message msg) {
     }
 
-For the illustration, the print of `OddFilter` would be:
+For the illustration, `OddFilter`'s code:
 
     :::java
-    public class OddFilter implements Filter<Message> {
+    public class OddFilter implements Filter<Object, MyMessage> {
         public boolean accepts(Object master, String methodName, MyMessage msg) {
             return msg.id() % 2 != 0;
         }
@@ -66,12 +63,12 @@ Two filters are available out of the box, by `id` and by `topic`. You can define
     protected void onMessage(Message msg) {
     }
 
-<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must be implemented `Message` interface or extended `BaseMessage` class.
+<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must be implemented from `Message` interface or extended `BaseMessage` class.
 
 
 ### MetaFilters
 
-As previously mentioned, *Jeta* is designed to detect errors at compile-time as far as possible. With plain filters this principle work with message types. Let's say we have a filter that work with a particular message type:
+As previously mentioned, *Jeta* is designed to detect errors at compile-time as far as possible. With plain filters this principle work via generic types. Let's say we have a filter that work with a particular message type:
 
     :::java
     public class MyMessage extends BaseMessage {
@@ -83,19 +80,19 @@ As previously mentioned, *Jeta* is designed to detect errors at compile-time as 
         }
     }
 
-If we try to use this filter on a method with a parameter which not assigneble from `MyMessage` class, the code won't be compiled. But *MetaHelper* allows you to write more complex checks, e.g. access to a nonprivate constant:
+If you try to use this filter on a method with a parameter which not assigneble from `MyMessage` class, the code won't be compiled. But *MetaFilters* allow you to write more complex checks, e.g. access to a nonprivate constant:
 
     :::java
     @MetaFilter(emitExpression = "$m.THE_NUMBER % 2 == 0")
     public interface EvenMetaFilter extends Filter {}
 
 
-`$m` is replaced with the master class, that uses this filter. So if the master doesn't have `THE_NUMBER` field, it will fail during compilation. You can also use `$e` to get access to the message instance.
+Here `$m` will be replaced with the master's class which this filter uses. So if the master doesn't have `THE_NUMBER` field, it will fail during compilation. You can also use `$e` to get access to the message instance.
 
 
 ### MetaHelper
 
-You can either use Jeta's basic implementation of `EventBus` - `org.brooth.jeta.eventbus.BaseEventBus` or implement your own. Also, you can you a single instance of the bus or create many. Nevertheless, you must pass an instance of the bus to the controller. Let's create a helper method for:
+You can either use *Jeta*'s basic implementation of `EventBus` - `org.brooth.jeta.eventbus.BaseEventBus` or implement your own. Also, you can use a single instance of the bus or create many. Nevertheless, you must pass an instance of the bus to the controller. Let's create a helper method for:
 
     :::java
     public static SubscriptionHandler registerSubscriber(Object master) {
@@ -103,4 +100,4 @@ You can either use Jeta's basic implementation of `EventBus` - `org.brooth.jeta.
             .registerSubscriber(bus);
     }
 
-You should definitely follow [this link](/guide/meta-helper) if you are still not familiar with *MetaHelper*.
+You definitely should follow [this link](/guide/meta-helper) if you are still not familiar with *MetaHelper*.
