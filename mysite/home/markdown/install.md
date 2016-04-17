@@ -2,7 +2,7 @@
   <h2>Installation</h2>
 </div>
 
-In this guide, we are goint to see how to install *Jeta* using `gradle` build system. Currently, `jCenter` repository is the way to get the artifacts. It may be available on `maven` repository in a future release.
+In this guide, we are going to see how to install *Jeta* using `gradle` build system. Currently, `jCenter` repository is the way to get the artifacts. It may be available on `maven` repository in a future release.
 
 Add next lines into your `build.gradle`:
 
@@ -17,7 +17,7 @@ Add next lines into your `build.gradle`:
     }
 
 
-In order to use `apt`, you need to install an appropriate plugin as well. Follow to [gradle apt plugins](https://plugins.gradle.org/search?term=apt) page to find out the options. For this example let's choose `net.ltgt.apt`:
+In order to use `apt`, you need to install an appropriate plugin as well. Follow [gradle apt plugins](https://plugins.gradle.org/search?term=apt) page to find out the options. For this example let's choose `net.ltgt.apt`:
 
     :::groovy
     buildscript {
@@ -35,10 +35,10 @@ In order to use `apt`, you need to install an appropriate plugin as well. Follow
     apply plugin: 'net.ltgt.apt'
 
 
-After the plugin applied, you can use `apt` to setup annotation processing environment.
+After the plugin is applied, you can use `apt` to setup the annotation processing environment.
 
 ### `jeta.properties`
-As the next step, it's recommended to create `jeta.properties` file to be able to config code generation behavior. This file should be located in the root package of the source set. Complete configuration guide is on [this page](/guide/config). At the installation stage to provide `metasitory.package` property is enough:
+In the next step, it's recommended to create `jeta.properties` file to be able to config code generation behavior. This file should be located in the root package of the source set. Complete configuration guide is on [this page](/guide/config). At the installation stage to provide `metasitory.package` property is enough:
 
     :::properties
     metasitory.package=com.example
@@ -46,7 +46,7 @@ As the next step, it's recommended to create `jeta.properties` file to be able t
 
 <span class="label label-info">Note</span> `metasitory.package` has to be unique for any module. `MapMetasitoryWriter` uses this package to generate metasitory containers in it. Follow [this guide](/guide/at-runtime) to get information about metasitories.
 
-To allow `jeta.properties` be found by *Jeta* one extra step is needed. In case you put this file in the root package, you can provide the `sourcepath` by adding next snippet into your `build.gradle`:
+To allow `jeta.properties` to be found by *Jeta* one extra step is needed. In case you put this file in the root package, you can provide the `sourcepath` by adding next snippet into your `build.gradle`:
 
     :::groovy
     compileJava {
@@ -55,7 +55,7 @@ To allow `jeta.properties` be found by *Jeta* one extra step is needed. In case 
 
 For a reason *Gradle* doesn't provide it by itself.
 
-Another available option - `jetaProperties` apt argument. Some of the plugins support the providing of these arguments (`net.ltgt.apt` currently doesn't)
+Another available option - `jetaProperties` apt argument. Some of the plugins support providing these arguments (`net.ltgt.apt` currently doesn't)
 
     :::groovy
     apt {
@@ -65,7 +65,7 @@ Another available option - `jetaProperties` apt argument. Some of the plugins su
     }
 
 <div class="alert alert-success" role="alert">
-For android projects <a href="https://bitbucket.org/hvisser/android-apt">android-apt plugin by Hugo Visser</a> is recomended.
+For android projects <a href="https://bitbucket.org/hvisser/android-apt">android-apt plugin by Hugo Visser</a> is recommended.
 </div>
 
 Complete `build.gradle`:
@@ -97,5 +97,4 @@ Complete `build.gradle`:
         compile 'org.brooth.jeta:jeta:1.1'
     }
 
-At this point, you can start using *Jeta*, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config) to find details.
-
+At this point, you can start using *Jeta*, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config) to find out details.

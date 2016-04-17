@@ -1,8 +1,8 @@
-*Jeta* - is an Open Source framework, built on the top of `javax.annotation.processing`, that brings metaprogramming into *Java* project. It aims to reduce boilerplate code and increase errors detection at compile-time.
+*Jeta* - is an Open Source framework, built on the top of `javax.annotation.processing`, that brings metaprogramming into *Java* Project. It aims to reduce boilerplate code and increase errors detection at compile-time.
 
-Metaprogramming is achieved by code generating which makes programs fast and stable at runtime. The main goal is to ensure that if the metacode is compiled it will work correctly. On the other hand, *Jeta* was designed to provide rapid code.
+Metaprogramming is achieved by code generating which makes programs fast and stable at runtime. The main goal is to ensure that if the metacode is compiled, it will work correctly. *Jeta* is also designed to provide rapid code.
 
-So if you are dissatisfied with `Java Reflection`, welcome to aboard :)
+If you are dissatisfied with `Java Reflection`, welcome aboard :)
 
 <div class="alert alert-success" role="alert">
 For android developers, <a href="/guide/androjeta/overview">Androjeta</a> is the better way to go.
@@ -10,10 +10,10 @@ For android developers, <a href="/guide/androjeta/overview">Androjeta</a> is the
 
 At a glance:
 --------
-*Jeta* provides a [number](/guide) of useful annotations that might help your to develop java programs quicker and safer. Let's take a look on a simple example:
+*Jeta* provides a [number](/guide) of useful annotations that might help you develop java programs quicker and safer. Let's take a look on a simple example:
 
 ### @Log
-Whatever logging tool is used in your project, the loggers can be supplied into classes through `Log` annotation. By default, the logger has a name of the host (master) class:
+Whatever logging tool is used in your project, the loggers can be supplied into classes through `Log` annotation. By default the logger has a name of the host (master) class:
 
     :::java
     class LogSample {
@@ -28,9 +28,9 @@ instead of:
         private final Logger logger = LoggerFactory.getLogger(LogSample.class);
     }
 
-The second approach instigates copy-paste. They often forget to replace the class, so loggers have incorrect names. In the first code snippet, no need to copy the logger code - it's easy to write, but even if you do the `logger` will have correct name.
+The second approach implies copy-paste. Programmers often forget to replace the class, so loggers have incorrect names. In the first code snippet, there is no need to copy the logger code - it is easy to write, but even if you do, the `logger` will have the correct name.
 
-Of course, this is a straightforward sample, but it illustrates what *Jeta* is all about - *less code, more stability*. Refer to the [user's guide](/guide) to find more features and how to create your own.
+Of course, this is a straightforward sample, but it illustrates what *Jeta* is all about - *less code, more stability*. Follow the [user's guide](/guide) to find more features and know how to create yours.
 
 Installation (gradle):
 ----------------------
@@ -45,7 +45,7 @@ Installation (gradle):
         compile 'org.brooth.jeta:jeta:1.1'
     }
 
-Complete Installation guide is on [this page](/guide/install)
+Click [this page](/guide/install) for complete installation guide.
 
 
 License

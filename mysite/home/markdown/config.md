@@ -2,7 +2,7 @@
 <h2>Configuration</h2>
 </div>
 
-In order to configure *Jeta*, you need to create `jeta.properties` file in the root package of the source set. It's a plain *Java Properties* file in `key=value` format.
+In order to configure *Jeta* you need to create `jeta.properties` file in the root package of the source set. It's a plain *Java Properties* file in `key=value` format.
 By default, *Jeta* is not allowed to get the path to the source directory, so you have to provide it yourself. There are two common ways to do that. First one is to declare `sourcepath` option in your `build.gradle`:
 
 ### `build.gradle`
@@ -12,7 +12,7 @@ By default, *Jeta* is not allowed to get the path to the source directory, so yo
         options.sourcepath = files('src/main/java')
     }
 
-The second way is available using `apt` arguments. Note that you need a plugin that supports this feature. If not, there are some hacks that might help, so you should google for it. If it's allowed, add next snippet into the `build.gradle` file:
+The second way is available using `apt` arguments. Note that you need a plugin that supports this feature. If not, there are some hacks that might help, so you should google it. If your plugin allows, add next snippet into the `build.gradle` file:
 
     :::groovy
     apt {
@@ -22,7 +22,7 @@ The second way is available using `apt` arguments. Note that you need a plugin t
     }
 
 ### `jeta.properties`
-Let's go through the options that available to config code generating. As it previously mentioned, the most required property is `metasitory.package`. It must be unique for any module, e.g. test module. This package you will need to provide to `MapMetasitory` constructor at runtime to be able to use this metasitory. The other options are described below as comments:
+Let's go through the options available to config code generating. As previously mentioned, the most required property is `metasitory.package`. It must be unique for any module, e.g. test module. You will need this package to provide to `MapMetasitory` constructor at runtime to use this metasitory. The other options are described below as comments:
 
     :::properties
     # Source directory path. Absolute or relative to `jeta.properties` path
@@ -35,11 +35,11 @@ Let's go through the options that available to config code generating. As it pre
     metasitory.package=com.example
 
     # Set this option to `true` to skip code re-generating in case the master's source code
-    # hasn't been changed since the previous run. Boosts up code processing.
+    # hasn't been changed since the previous run. Boost up code processing.
     # (`false` by default)
     utd.enable=true
 
-    # Delete metacode if its master not exists anymore
+    # Delete metacode if its master does not exist anymore
     # (`true` by default if `utd` feature is enabled)
     utd.cleanup=true
 
