@@ -103,7 +103,7 @@ As you expect, `MetaHelper.collectTypes` will return a collection with two items
 
 ###MetaHelper
 
-Here are the helper methods for this tutorial:
+Add the following methods into *MetaHelper* in order to use these features.
 
     :::java
     public static List<Class<?>> collectTypes(Class<?> masterClass, Class<? extends Annotation> annotationClass) {

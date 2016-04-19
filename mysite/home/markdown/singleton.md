@@ -22,7 +22,7 @@ Unlike *Singleton*, *Multiton* is a quite useful feature. If you have ever tried
     :::java
     @Multiton
     public class MultitonSample {
-        static MultitonMetacode<MultitonSample> multiton =
+        static MultitonMetacode<MultitonSample> multiton = 
             MetaHelper.getMultiton(MultitonSample.class);
 
         public static MultitonSample getInstance(String key) {

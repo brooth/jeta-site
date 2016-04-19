@@ -70,4 +70,4 @@ Well, to bind the components we should define a helper method for:
         new FindViewController(metasitory, activity).findViews();
     }
 
-Please, read the article about [MetaHelper](/guide/meta-helper) if you didn't yet.
+Please, read the article about [MetaHelper](/guide/meta-helper.html) if you didn't yet.

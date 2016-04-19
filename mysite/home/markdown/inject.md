@@ -17,7 +17,7 @@ Before we start, let's define a helper method we're going to inject with:
     }
 
 
-Please, read [this article](/guide/meta-helper) first, if you have questions about *MetaHelper*.
+Please, read [this article](/guide/meta-helper.html) first, if you have questions about *MetaHelper*.
 
 <a name="MetaEntity"></a>
 ### MetaEntity
@@ -138,7 +138,7 @@ but it's allowed to define a default scope. In this case, you can leave `scope` 
     :::properties
     inject.scope.default = com.extample.MyScope
 
-Go to [configuration guide](/guide/config) if you have any questions about `jeta.properties`.
+Go to [configuration guide](/guide/config.html) if you have any questions about `jeta.properties`.
 
 Let's create a scope and go through its details.
 
@@ -227,7 +227,7 @@ Let's say you want to use `javax.inject.Inject` to supply meta entities. To do s
 
 ### Hello, World!
 
-For the demonstration let's change the [Hello, World!](/guide/code-generating#HelloWorldSample) example. Instead of providing *Hello, World!* via `@SayHello` annotation, we'll inject it.
+For the demonstration let's change the [Hello, World!](/guide/code-generating.html#HelloWorldSample) example. Instead of providing *Hello, World!* via `@SayHello` annotation, we'll inject it.
 
 First, we need to create *Module* and *Scope*:
 
@@ -324,4 +324,4 @@ Now, in addition to being able to inject `TestProducer`, you can satisfy `Produc
     public class TestProducer extends Producer {
     }
 
-Besides this article, it's recommended to go through [multi-modules projects](/guide/multi-modules) guide. It describes how to share the metacode between modules.
+Besides this article, it's recommended to go through [multi-modules projects](/guide/multi-modules.html) guide. It describes how to share the metacode between modules.

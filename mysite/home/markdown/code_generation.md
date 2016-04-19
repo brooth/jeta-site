@@ -38,6 +38,6 @@ If *Jeta* had a processor for this example, the metacode would be:
         }
     }
 
-You can find sample code for the processor that generates above metacode on [this page](/guide/custom-processor). Also, there is a similar example on [GitHub](https://github.com/brooth/jeta-samples).
+You can find sample code for the processor that generates above metacode on [this page](/guide/custom-processor.html). Also, there is a similar example on [GitHub](https://github.com/brooth/jeta-samples).
 
-How `HelloWorldSample_Metacode` is applied to `HelloWorldSample` is explained in the [next article](/guide/at-runtime).
+How `HelloWorldSample_Metacode` is applied to `HelloWorldSample` is explained in the [next article](/guide/at-runtime.html).

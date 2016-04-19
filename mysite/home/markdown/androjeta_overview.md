@@ -17,7 +17,7 @@ Every Android developer probably familiar with `onSaveInstanceState` callback an
     @Retain
     String myVolatileString;
 
-Go to [*Retain* guide](/androjeta/retain) to find out how to make your life easier.
+Go to [*Retain* guide](/guide/androjeta/retain.html) to find out how to make your life easier.
 
 ### FindView
 
@@ -27,13 +27,13 @@ Go to [*Retain* guide](/androjeta/retain) to find out how to make your life easi
     @FindView
     Button saveButton;
 
-This feature eliminates `findViewById` usage. How is that possible? Explained in [this article](/guide/findviews).
+This feature eliminates `findViewById` usage. How is that possible? Explained in [this article](/guide/androjeta/findviews.html).
 
 
 ### Jeta collectors vs scan packages
 
-You are not allow to scan packages on Android if you need to search for some classes. Nevertheless, `Jeta Collectors` do that job times faster, even if it were possible. Please, follow [this link](/guide/collector) to be aware of `Jeta Collectors` if you are not yet.
+You are not allow to scan packages on Android if you need to search for some classes. Nevertheless, `Jeta Collectors` do that job times faster, even if it were possible. Please, follow [this link](/guide/collector.html) to be aware of `Jeta Collectors` if you are not yet.
 
 
 ###P.S.
-In fact, *Jeta* was born as the result of all these issues, Android developers face to every day. Follow  through the [guide](/guide) in order to be able to create stable Android apps with enjoyment.
+In fact, *Jeta* was born as the result of all these issues, Android developers face to every day. Follow  through the [guide](/guide.html) in order to be able to create stable Android apps with enjoyment.

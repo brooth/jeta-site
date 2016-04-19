@@ -39,7 +39,7 @@ Let's go through the options available to config code generating. As previously 
     # (`false` by default)
     utd.enable=true
 
-    # Delete metacode if its master does not exist anymore
+    # Delete metacode if its master does not exists anymore
     # (`true` by default if `utd` feature is enabled)
     utd.cleanup=true
 

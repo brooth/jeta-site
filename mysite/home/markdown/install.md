@@ -38,13 +38,13 @@ In order to use `apt`, you need to install an appropriate plugin as well. Follow
 After the plugin is applied, you can use `apt` to setup the annotation processing environment.
 
 ### `jeta.properties`
-In the next step, it's recommended to create `jeta.properties` file to be able to config code generation behavior. This file should be located in the root package of the source set. Complete configuration guide is on [this page](/guide/config). At the installation stage to provide `metasitory.package` property is enough:
+In the next step, it's recommended to create `jeta.properties` file to be able to config code generation behavior. This file should be located in the root package of the source set. Complete configuration guide is on [this page](/guide/config.html). At the installation stage to provide `metasitory.package` property is enough:
 
     :::properties
     metasitory.package=com.example
 
 
-<span class="label label-info">Note</span> `metasitory.package` has to be unique for any module. `MapMetasitoryWriter` uses this package to generate metasitory containers in it. Follow [this guide](/guide/at-runtime) to get information about metasitories.
+<span class="label label-info">Note</span> `metasitory.package` has to be unique for any module. `MapMetasitoryWriter` uses this package to generate metasitory containers in it. Follow [this guide](/guide/at-runtime.html) to get information about metasitories.
 
 To allow `jeta.properties` to be found by *Jeta* one extra step is needed. In case you put this file in the root package, you can provide the `sourcepath` by adding next snippet into your `build.gradle`:
 
@@ -97,4 +97,4 @@ Complete `build.gradle`:
         compile 'org.brooth.jeta:jeta:1.1'
     }
 
-At this point, you can start using *Jeta*, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config) to find out details.
+At this point, you can start using *Jeta*, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config.html) to find out details.

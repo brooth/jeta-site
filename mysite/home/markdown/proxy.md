@@ -54,4 +54,4 @@ Now, let's define the helper method:
         new ProxyController(getInstance().metasitory, master).createProxy(real);
     }
 
-Please, follow [this link](/guide/meta-helper) if you have questions about *MetaHelper*.
+Please, follow [this link](/guide/meta-helper.html) if you have questions about *MetaHelper*.

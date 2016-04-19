@@ -3,7 +3,7 @@
 </div>
 
 
-*Androjeta* installation process is similar to the [installation](/guide/install) of *Jeta*. But here it's recommended to use [android-apt plugin by Hugo Visser](https://bitbucket.org/hvisser/android-apt) as the plugin.
+*Androjeta* installation process is similar to the [installation](/guide/install.html) of *Jeta*. But here it's recommended to use [android-apt plugin by Hugo Visser](https://bitbucket.org/hvisser/android-apt) as the plugin.
 
 Here is the complete listing:
 
@@ -36,5 +36,5 @@ Here is the complete listing:
     }
 
 
-Go to the [configuration guide](/guide/config) to know about what are `apt-arguments` needed for.
+Go to the [configuration guide](/guide/config.html) to know about what are `apt-arguments` needed for.
 

@@ -58,7 +58,7 @@ Once you defined `createLoggers()`, you can provide loggers into your classes:
 
 
 ### Hello, World!
-Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime). Its *MetaHelper* will be:
+Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime.html). Its *MetaHelper* will be:
 
     :::java
     public class MetaHelper {

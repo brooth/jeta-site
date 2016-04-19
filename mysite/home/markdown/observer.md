@@ -85,7 +85,7 @@ In the examples above we use two helper methods. Their code would be:
         return new ObserverController<>(metasitory, observer).registerObserver(observable);
     }
 
-Please, read [this article](/guide/meta-helper) if you have questions about *MetaHelper*.
+Please, read [this article](/guide/meta-helper.html) if you have questions about *MetaHelper*.
 
-You should also become acquainted with [*Event-Bus*](/guide/event-bus) features in addition to this guide.
+You should also become acquainted with [*Event-Bus*](/guide/event-bus.html) features in addition to this guide.
 

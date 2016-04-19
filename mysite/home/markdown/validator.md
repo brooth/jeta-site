@@ -100,7 +100,7 @@ As you probably noticed, `ExperienceValidator` uses `age` field for the check. B
 
 ###ValidatorAlias
 
-*ValidatorAlias* allows you to create your custom annotations to validate with. You need to define these annotations in `jeta.properties` file. Please, read [this post](/guide/config) if you have questions about this file.
+*ValidatorAlias* allows you to create your custom annotations to validate with. You need to define these annotations in `jeta.properties` file. Please, read [this post](/guide/config.html) if you have questions about this file.
 
     :::properties
     validator.alias.com.example.NotYoung = com.example.AgeValidator

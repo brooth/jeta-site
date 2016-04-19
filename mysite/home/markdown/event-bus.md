@@ -19,7 +19,7 @@
         }
     }
 
-As well as [observer's handler](/guide/observer), `SubscriptionHandler` lets you control subscription workflow. You can stop listening a message:
+As well as [observer's handler](/guide/observer.html), `SubscriptionHandler` lets you control subscription workflow. You can stop listening a message:
 
     :::java
     handler.unregister(Message.class);
@@ -100,4 +100,4 @@ You can either use *Jeta*'s basic implementation of `EventBus` - `org.brooth.jet
             .registerSubscriber(bus);
     }
 
-You definitely should follow [this link](/guide/meta-helper) if you are still not familiar with *MetaHelper*.
+You definitely should follow [this link](/guide/meta-helper.html) if you are still not familiar with *MetaHelper*.

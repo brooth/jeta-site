@@ -16,7 +16,7 @@ With `@OnClick` and `@OnLongClick` annotations you can use your methods as `andr
         }
     }
 
-As well as in case of [@FindView](/guide/androjeta/findviews), *Androjeta* composes the IDs by default:
+As well as in case of [@FindView](/guide/androjeta/findviews.html), *Androjeta* composes the IDs by default:
 
 `<lowercased activity name> + "_" (underscore) + <method name without prefix>`
 

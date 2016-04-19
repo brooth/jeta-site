@@ -6,7 +6,7 @@ If you want to create your own `Metasitory` implementation to use it in your pro
 
 So, the idea here is that we want to generate `XML` file which holds all the needed information about metacode: masters, their metacode and the annotations they use.
 
-First, we need to create a `MetasitoryWrite`. This class generates a metacode store, ie.`XML` file. As in case of [custom processor](/guide/custom-processor) it must be a separate module. For this example we won't use any modern tools to built `XML` files but just write it as plain text to the output:
+First, we need to create a `MetasitoryWrite`. This class generates a metacode store, ie.`XML` file. As in case of [custom processor](/guide/custom-processor.html) it must be a separate module. For this example we won't use any modern tools to built `XML` files but just write it as plain text to the output:
 
     :::java
     public class XmlMetasitoryWriter implements MetasitoryWriter {
