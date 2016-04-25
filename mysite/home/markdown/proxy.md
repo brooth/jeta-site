@@ -2,7 +2,7 @@
     <h2>Proxy</h2>
 </div>
 
-*Jeta Proxy* lets you to create [proxy objects](https://en.wikipedia.org/wiki/Proxy_pattern). Let's demonstrate this feature with an example.
+*Jeta Proxy* allows you to create [proxy objects](https://en.wikipedia.org/wiki/Proxy_pattern). Let's demonstrate this feature with an example.
 
 Assume we have an interface `Ping` that we use to test connection to a server. It contains `execute` method which returns the time of its work - the ping time.
 
@@ -12,7 +12,7 @@ Assume we have an interface `Ping` that we use to test connection to a server. I
         int execute();
     }
 
-There is a real implementation of `Ping` and it works well. Now we need to create a proxy class to be able to wrap an implementation and substitute some logic, eg. divide on 2 the actual time of the `ping`.
+There is a real implementation of `Ping` and it works well. Now we need to create a proxy class to be able to wrap an implementation and substitute some logic, e.g. divide the actual time of the `ping` by 2.
 
 
 The main aspect of *Jeta Proxy* is that you need to create an abstract class and implement only the method you want to override:
@@ -25,9 +25,9 @@ The main aspect of *Jeta Proxy* is that you need to create an abstract class and
         }
     }
 
-<span class="label label-info">Note</span> You can access to the real `Ping` implementation via `real()` method.
+<span class="label label-info">Note</span> You can access the real `Ping` implementation via `real()` method.
 
-Well, in our proxy-wrapper we invoke real implementation and divide its result on two. To create the proxy-class we need a host class in which we are going to use `@Proxy` feature:
+Well, in our proxy-wrapper we invoke real implementation and divide its result by two. To create the proxy-class we need a host class in which we are going to use `@Proxy` feature:
 
     :::java
     public ProxyTest {

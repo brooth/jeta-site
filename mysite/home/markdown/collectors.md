@@ -2,7 +2,7 @@
     <h2>Jeta Collectors</h2>
 </div>
 
-*Jeta Collectors* allow you to, well, collect scattered types in your project. Let's get through with an example. Assume we have an *EventManager* that receives events outside and invokes appropriate handlers:
+Well, *Jeta Collectors* allow you to "collect" scattered types in your project. Let's get through with an example. Assume we have an *EventManager* that receives events outside and invokes appropriate handlers:
 
     :::java
     interface EventHandler {
@@ -49,11 +49,11 @@ Commonly used practice is to create an xml file and register all the handlers in
         }
     }
 
-Besides that, this approach has no validation and fails at runtime in case of misspelling, it's frequently forgotten to modify the xml file each time you add new handler into your project.
+Besides, this approach has no validation, so it fails at runtime in case of misspelling. It's frequently forgotten to modify the xml file each time you add a new handler into your project.
 
 ###TypeCollector
 
-*TypeCollector* searches for the types that use given annotation and collect them during compilation. Let's modify the example above to demonstrate the potential:
+*TypeCollector* searches for the types that use given annotation and collect them during compilation. Let's modify the example above to demonstrate its potential:
 
     :::java
     @interface Handler {
@@ -81,9 +81,9 @@ Besides that, this approach has no validation and fails at runtime in case of mi
         }
     }
 
-As you expect, `MetaHelper.collectTypes` will return a collection with two items - `HandlerOne` and `HandlerTwo`. So, if you add new handler and put `@Handler` on, *TypeCollector* will return it as well, without any amendments.
+As you expect, `MetaHelper.collectTypes` will return a collection with two items - `HandlerOne` and `HandlerTwo`. So, if you add a new handler and put `@Handler` on, *TypeCollector* will return it as well, without any amendments.
 
- <span class="label label-info">Note</span> *TypeCollector* allows you to search for many annotations. Just pass these annotations into `@TypeCollector`. This is why you must specify exact annotation class in `collectTypes` method parameters.
+ <span class="label label-info">Note</span> *TypeCollector* allows you to search for multiple annotations. Just pass these annotations into `@TypeCollector`. This is why you must specify exact annotation class in `collectTypes` method parameters.
 
 ###ObjectCollector
 

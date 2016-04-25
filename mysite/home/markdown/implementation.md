@@ -2,7 +2,7 @@
     <h2>Implementation</h2>
 </div>
 
-In a multi-module project might be a case when a feature can to be implemented many ways. For example, *DbManger* needs a driver to work with a database implementation. It might be `sqlite`, `postgres` or any other. *DbManger* does a lot - supports JPQL, mappings, DAO and other features. Even so it depends on a driver to be able to communicate with exact DB implementation. Let's see how *Jeta Implementation* can help:
+In a multi-module project might have a case when a feature can to be implemented in many ways, e.g. *DbManger* needs a driver to work with a database implementation. It might be `sqlite`, `postgres` or any other. *DbManger* does a lot - supports JPQL, mappings, DAO and other features. However, it depends on a driver to be able to communicate with the exact DB implementation. Let's see how *Jeta Implementation* can help:
 
     :::java
     class DbManger {
@@ -19,7 +19,7 @@ In a multi-module project might be a case when a feature can to be implemented m
         // methods to work with a db...
     }
 
-In a module, in which we want to use `DbManger`, we provide the implementation:
+In a module, where we want to use `DbManger`, we provide the implementation:
 
     :::java
     @Implementation(DbDriver.class)
@@ -44,5 +44,5 @@ The helper method would be:
         return new ImplementationController<I>(metasitory, of).getImplementation();
     }
 
-In addition to `getImplementation()`, *ImplementationController* provides `getImplementations()` method if necessary to get all the implementations and `hasImplementation()` to check if there is any.
+In addition to `getImplementation()`, *ImplementationController* provides `getImplementations()` method, if it is necessary to get ALL the implementations, and `hasImplementation()` to check if there is ANY implementation.
 

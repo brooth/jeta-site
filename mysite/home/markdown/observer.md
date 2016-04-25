@@ -34,7 +34,7 @@ or both:
 
 ###Observer
 
-To create an *Observer*, add `@Observe` annotation on the method that accepts one parameter - `Event` class.
+To create an *Observer*, add `@Observe` annotation to the method that accepts one parameter - `Event` class.
 
     :::java
     class Observer {
@@ -50,14 +50,14 @@ To create an *Observer*, add `@Observe` annotation on the method that accepts on
         }
     }
 
-<span class="label label-info">Note</span> You must define the observables, the methods are listening to.
+<span class="label label-info">Note</span> You must define the observables, i.e. the methods you are listening to.
 
-The `handler` allows you to detatch your class from *Observable*:
+The `handler` allows you to detach your class from *Observable*:
 
     :::java
     handler.unregisterAll(Observable.class);
 
-Stop listening certain event:
+Stop listening to a certain event:
 
     :::java
     handler.unregister(Event.class);
@@ -67,7 +67,7 @@ You can use one handler to control many *Observables*:
     :::java
     handler.add(MetaHelper.registerObserver(this, otherObservable));
 
-And unregister all the listeners at ones:
+And unregister all the listeners at once:
 
     :::java
     handler.unregisterAll();
@@ -87,5 +87,5 @@ In the examples above we use two helper methods. Their code would be:
 
 Please, read [this article](/guide/meta-helper.html) if you have questions about *MetaHelper*.
 
-You should also become acquainted with [*Event-Bus*](/guide/event-bus.html) features in addition to this guide.
+You should also look at [*Event-Bus*](/guide/event-bus.html) features in addition to this guide.
 

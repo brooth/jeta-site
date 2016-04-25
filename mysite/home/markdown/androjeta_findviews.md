@@ -32,7 +32,7 @@ How does it work? Well, by default Androjeta composes the ID as:
 
 So, for our example it will be *"sampleActivity_textView"*.
 
-<span class="label label-info">Note</span> You shouldn't distrust this approach. In case of misspelling, it will fail at compile-time. On the other hand, it helps you to keep your code clean and in one style.
+<span class="label label-info">Note</span> You shouldn't distrust this approach. In case of misspelling, it will fail at compile-time. Also, it helps you keep your code clean and in one style.
 
 Here is the `BaseActivity`:
 
@@ -53,7 +53,7 @@ For sure, you can pass whatever `R.id` you want:
         TextView textView;
     }
 
-or, what important for library modules (`aar` files), you can pass only ID as a string:
+or, what is important for library modules (`aar` files), you can pass only ID as a string:
 
     :::java
     class SampleActivity extends BaseActivity {
@@ -70,4 +70,4 @@ Well, to bind the components we should define a helper method for:
         new FindViewController(metasitory, activity).findViews();
     }
 
-Please, read the article about [MetaHelper](/guide/meta-helper.html) if you didn't yet.
+Please, read the article about [MetaHelper](/guide/meta-helper.html) if you haven't yet.

@@ -22,11 +22,11 @@ As well as in case of [@FindView](/guide/androjeta/findviews.html), *Androjeta* 
 
 Where `prefix` is  *onClick* or *onLongClick* respectively.
 
-<span class="label label-info">Note</span> For sure no reasons to distrust this approach. In case of misspelling, the code won't be compiled.
+<span class="label label-info">Note</span> For sure there is no reason to distrust this approach. In case of misspelling, the code won't be compiled.
 
 Clearly, for this example, both `onClickSaveButton` and `onLongClickSaveButton` are bound to a view by id `R.id.sampleActivity_saveButton`.
 
-<span class="label label-info">Note</span> *OnLongClick* allows you to set method's return type to `void`. In this case *Androjeta* will return `true` by default. Change it to `boolean` otherwise.
+<span class="label label-info">Note</span> *OnLongClick* allows you to set a method return type to `void`. In this case *Androjeta* will return `true` by default. Change it to `boolean` otherwise.
 
 You can also define IDs explicitly:
 
