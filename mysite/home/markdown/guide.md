@@ -8,7 +8,7 @@
 * [How to configure *Jeta* properly](/guide/config.html)
 * [Provide loggers with `@Log` easy and safe](/guide/logger.html)
 * [Dependecy Injection and `@MetaEntity`](/guide/inject.html)
-* [Easy to use observer patten](/guide/observer.html)
+* [Easy to use observer pattern](/guide/observer.html)
 * [First on the market *Event Bus* without reflection](/guide/event-bus.html)
 * [How to collect scattered classes of your project](/guide/collector.html)
 * [Dial with deferred implementation](/guide/implementation.html)
@@ -20,7 +20,7 @@
 * [Overview](/guide/androjeta/overview.html)
 * [Installation](/guide/androjeta/install.html)
 * [Configuraion](/guide/androjeta/config.html)
-* [Most elegance way to bind views](/guide/androjeta/findviews.html)
+* [Most elegant way to bind views](/guide/androjeta/findviews.html)
 * [How to eluminate onSaveInstanceState and start using @Retain](/guide/androjeta/retaind.html)
 * [Bind button clicks right into your methods](/guide/androjeta/clicks.html)
 

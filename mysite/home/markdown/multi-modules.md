@@ -2,11 +2,11 @@
     <h2>Multi-Module Projects</h2>
 </div>
 
-Multi-module projects is the place where *Jeta* feels at home. You can share metacode between modules, override behavior, substitute classes and so on. It also should be important for any project, since projects are frequently composed of at least couple of modules - main and test. And the helper methods can be used in any of these modules.
+Multi-module projects are the place where *Jeta* shows the best. You can share metacode between modules, override behavior, substitute classes and so on. It also should be important for any project, since projects are frequently composed of at least couple of modules - main and test. And the helper methods can be used in any of these modules.
 
-As mentioned in [*Dependency Injection*](/guide/inject.html) article, you are allowed to extend injection providers. To make that possible, you must create one metacode-base for all your modules. In this tutorial, we will stick the approach that we used in the previous guides - *MetaHelper*, which holds singleton instance of the metasitory.
+As mentioned in [*Dependency Injection*](/guide/inject.html) article, you are allowed to extend injection providers. To make that possible, you must create one metacode-base for all your modules. In this tutorial, we will stick to the approach that we used in the previous guides - *MetaHelper*, which holds singleton instance of the metasitory.
 
-To be able to add metacode from one module into another, e.g. from test to main, metasitory provides a method for:
+To be able to add metacode from one module into another, e.g. from test to main one, metasitory provides a method for:
 
     :::java
     public interface Metasitory {
@@ -14,7 +14,7 @@ To be able to add metacode from one module into another, e.g. from test to main,
     }
 
 
-Nevertheless, `MapMetasitory` provides similar method that matches better for this case:
+Nevertheless, `MapMetasitory` provides a similar method that matches better for this case:
 
     :::java
     public class MapMetasitory implements Metasitory {
@@ -22,7 +22,7 @@ Nevertheless, `MapMetasitory` provides similar method that matches better for th
     }
 
 
-The only thing we need to do - pass our test package name into this method during initialization. Something like:
+The only thing we need to do is to pass our test package name into this method during initialization, something like:
 
     :::java
     public TestApp extends MainApp {
@@ -34,7 +34,7 @@ The only thing we need to do - pass our test package name into this method durin
 
 ###DI Scopes
 
-Let's walk through an example, in which we need to substitute an entity that is injected in main module. As it's described in [*Dependency Injection*](/guide/inject.html) guide, we must create a scope and provider that extend corresponding classes from the main module. With created scope you can provide different entities for old dependencies. There is one problem though. How to replace the scope with the test one? We can use `@Implementation` [feature](/guide/implementation.html) for this:
+Let's go through an example, in which we need to substitute an entity that is injected in the main module. As it's described in [*Dependency Injection*](/guide/inject.html) guide, we must create a scope and provider that extend corresponding classes from the main module. With a created scope you can provide different entities for old dependencies. There is one problem though - how to replace the scope with the test one? We can use `@Implementation` [feature](/guide/implementation.html) for this:
 
     :::java
     @Scope
@@ -43,7 +43,7 @@ Let's walk through an example, in which we need to substitute an entity that is 
     }
 
 
-By default, the implementation is provided by itself. In *MetaHelper*, instead of creating `AppScope` we're looking up its implementation.
+By default, the implementation is provided by itself. In *MetaHelper* instead of creating `AppScope` we're looking for its implementation.
 
     :::java
     public class MetaHelper {
@@ -57,7 +57,7 @@ By default, the implementation is provided by itself. In *MetaHelper*, instead o
         }
     }
 
-Finally, in test module we set test scope as the implementation of main scope, but with higher priority:
+Finally, in a test module we set a test scope as the implementation of the main scope but with higher priority:
 
     :::java
     @Scope
@@ -65,5 +65,5 @@ Finally, in test module we set test scope as the implementation of main scope, b
     public class TestAppScope extends AppScope {
     }
 
-After test metacode is added into main metasitory, main injection scope will be replaced with the test one.
+After the test metacode is added into the main metasitory, the main injection scope will be replaced with the test one.
 
