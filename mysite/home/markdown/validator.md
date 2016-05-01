@@ -141,10 +141,10 @@ Well, due to *ValidatorAlias* the code looks cleaner:
 
 <span class="label label-warning">Pay attention</span> Prior to version 2.0 the annotations must be already compiled into byte-code in order to use them as the aliases.
 
-<span class="label label-success">Tips</span> You can use *Jeta* `NonNull` validator alongside with `javax.annotation.Nonnull`. It allows you to actually validate *NPE* issues, not just highlight them by an IDE.
+<span class="label label-success">Tip</span> You can use *Jeta* `NonNull` validator alongside with `javax.annotation.Nonnull`. It allows you to actually validate *NPE* issues, not just highlight them by an IDE.
 
     :::properties
-    validator.alias.javax.annotation.Nonnull=org.brooth.jeta.validate.NotNull
+    validator.alias.javax.annotation.Nonnull = org.brooth.jeta.validate.NotNull
 
 ###MetaHelper
 

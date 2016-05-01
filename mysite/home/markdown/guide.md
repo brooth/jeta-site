@@ -21,7 +21,7 @@
 * [Installation](/guide/androjeta/install.html)
 * [Configuraion](/guide/androjeta/config.html)
 * [Most elegant way to bind views](/guide/androjeta/findviews.html)
-* [How to eluminate onSaveInstanceState and start using @Retain](/guide/androjeta/retaind.html)
+* [How to eluminate `onSaveInstanceState` and start using `@Retain`](/guide/androjeta/retaind.html)
 * [Bind button clicks right into your methods](/guide/androjeta/clicks.html)
 
 ### Advanced

@@ -26,3 +26,14 @@ div.alert {
     margin-bottom: 20px;
     padding: 10px;
 }
+
+table.donate_table {
+    border-spacing: 0 3px;
+}
+
+table.donators_table {
+    margin-top: 30px;
+    width: 100%;
+}
+
+

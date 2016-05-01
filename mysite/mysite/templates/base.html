@@ -24,6 +24,11 @@
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/website.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-1.12.2.min.js' %}"></script>
+        {% bootstrap_javascript %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
@@ -47,9 +52,9 @@
                         <a href="https://github.com/brooth/androjeta-samples" type="button" class="btn btn-link">SAMPLES</a>
                     {% endif %}
                     <a href="/contact.html" type="button" class="btn btn-link">CONTACT</a>
-                    <button type="button" class="btn btn-primary">
+                    <a href="/donate.html" type="button" class="btn btn-primary">
                         <span class="glyphicon glyphicon-star" aria-hidden="true"></span> DONATE
-                    </button>
+                    </a>
                 </span>
             </div>
 
@@ -115,11 +120,6 @@
                 </tr>
             </table>
         </div>
-
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/website.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/jquery-1.12.2.min.js' %}"></script>
-        {% bootstrap_javascript %}
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
