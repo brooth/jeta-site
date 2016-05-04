@@ -2,7 +2,7 @@
     <h2>Androjeta</h2>
 </div>
 
-In addition to a number of *Jeta* features, that are available on Android platform as well, *Androjeta* adds some extra. And of course, *Androjeta* follows the *Jeta* concepts - no reflection, compile-time validation and boilerplate-code elimination.
+In addition to a [number](/guide.html) of *Jeta* features, that are available on Android platform as well, *Androjeta* adds some extra. And of course, *Androjeta* follows the *Jeta* concepts - no reflection, compile-time validation and boilerplate-code elimination.
 
 ### `Java reflection` as a bad manner
 
