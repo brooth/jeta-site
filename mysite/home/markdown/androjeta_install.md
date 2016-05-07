@@ -31,8 +31,8 @@ Here is the complete listing:
     }
 
     dependencies {
-        apt 'org.brooth.androjeta:androjeta-apt:1.2'
-        compile 'org.brooth.androjeta:androjeta:1.2'
+        apt 'org.brooth.androjeta:androjeta-apt:1.3'
+        compile 'org.brooth.androjeta:androjeta:1.3'
     }
 
 
