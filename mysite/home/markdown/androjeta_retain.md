@@ -12,7 +12,7 @@
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             if (savedInstanceState != null)
-                data = bundle.getString("data");
+                data = savedInstanceState.getString("data");
         }
 
         @Override
