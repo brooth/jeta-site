@@ -1,16 +1,14 @@
-<div class="page-header">
-	<h2>Contact Us</h2>
-</div>
-
 ###Email
-[jeta.brooth@gmail.com](mailto:jeta.brooth@gmail.com)
+* [jeta.brooth@gmail.com](mailto:jeta.brooth@gmail.com)
+
+###StackOverflow
+* [Jeta](http://stackoverflow.com/tags/jeta/info)
+* [Androjeta](http://stackoverflow.com/tags/androjeta/info)
 
 ###Issue Tracker
-[Jeta](https://github.com/brooth/jeta/issues)
-
-[Androjeta](https://github.com/brooth/androjeta/issues)
+* [Jeta](https://github.com/brooth/jeta/issues)
+* [Androjeta](https://github.com/brooth/androjeta/issues)
 
 ###Source Code
-[Jeta](https://github.com/brooth/jeta)
-
-[Androjeta](https://github.com/brooth/androjeta)
+* [Jeta](https://github.com/brooth/jeta)
+* [Androjeta](https://github.com/brooth/androjeta)
