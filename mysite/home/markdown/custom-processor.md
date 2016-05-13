@@ -2,7 +2,13 @@
     <h2>Custom Processor</h2>
 </div>
 
-*Jeta* allows you to create custom annotation processor and you should take advantage of for sure. In this post we'll create a processor for our [Hello, World sample](/guide/code-generating.html#HelloWorldSample).
+*Jeta* allows you to create custom annotation processor and you should take advantage of for sure.
+
+<div class="alert alert-success" role="alert">
+Please, go through this <a href="http://stackoverflow.com/questions/37210107/jeta-how-to-create-custom-processors">step-by-step tutorial</a> on StackOverflow first.
+</div>
+
+In this post we'll create a processor for our [Hello, World sample](/guide/code-generating.html#HelloWorldSample).
 
 First of all, we must create a separate module since a processor and all the corresponding code is needed at compile time only. Also, this module must be compiled into byte-code before being passed to `javac` as the annotation processor.
 

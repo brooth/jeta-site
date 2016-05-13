@@ -10,7 +10,7 @@ For android developers, <a href="/guide/androjeta/overview.html">Androjeta</a> i
 
 At a glance:
 --------
-*Jeta* provides a [number](/guide.html) of useful annotations that might help you develop java programs quicker and safer. Let's take a look on a simple example:
+*Jeta* provides [plenty](/guide.html) of useful annotations that might help you develop java programs quicker and safer. Let's take a look on a simple example:
 
 ### @Log
 Whatever logging tool is used in your project, the loggers can be supplied into classes through `Log` annotation. By default the logger has a name of the host (master) class:
