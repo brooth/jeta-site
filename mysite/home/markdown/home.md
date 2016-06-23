@@ -41,8 +41,8 @@ Installation (gradle):
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.3'
-        compile 'org.brooth.jeta:jeta:1.3'
+        apt 'org.brooth.jeta:jeta-apt:1.4'
+        compile 'org.brooth.jeta:jeta:1.4'
     }
 
 Click [this page](/guide/install.html) for complete installation guide.

@@ -12,8 +12,8 @@ Add next lines into your `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.3'
-        compile 'org.brooth.jeta:jeta:1.3'
+        apt 'org.brooth.jeta:jeta-apt:1.4'
+        compile 'org.brooth.jeta:jeta:1.4'
     }
 
 
@@ -93,8 +93,8 @@ Complete `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.3'
-        compile 'org.brooth.jeta:jeta:1.3'
+        apt 'org.brooth.jeta:jeta-apt:1.4'
+        compile 'org.brooth.jeta:jeta:1.4'
     }
 
 At this point, you can start using *Jeta*, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config.html) to find out details.
