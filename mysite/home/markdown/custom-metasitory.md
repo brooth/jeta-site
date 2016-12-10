@@ -4,7 +4,7 @@
 
 If you want to create your own `Metasitory` implementation to use it in your project, well, *Jeta* allows that too. In this guide, we'll create one based on an `XML` file. I don't think it's a good idea but it's good enough for the illustration.
 
-So, the idea here is that we want to generate an `XML` file which holds all the required information about metacode: masters, their metacode and the annotations they use.
+So, the idea here's that we want to generate an `XML` file which holds all the required information about metacode: masters, their metacode and the annotations they use.
 
 First, we need to create a `MetasitoryWriter`. This class generates a metacode store, i.e.`XML` file. As in case of [custom processor](/guide/custom-processor.html) it must be a separate module. For this example we won't use any modern tools to built `XML` files but just write it as plain text to the output:
 
@@ -69,7 +69,7 @@ To say to *Jeta* to use this metasitory writer, add this property into `jeta.pro
     metasitory.writer=com.example.metasitory.XmlMetasitoryWriter
 
 
-After you assemble your project, we'll see `metasitory.xml` file in `build/generated/source/apt/main/` folder. Here is the its listing:
+After you assemble your project, we'll see `metasitory.xml` file in `build/generated/source/apt/main/` folder. Here's the its listing:
 
     :::xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -80,7 +80,7 @@ After you assemble your project, we'll see `metasitory.xml` file in `build/gener
     </items>
 
 
-We won't create actual `Metasitory` implementation for this file. There is no difficulties to do that though. It parses `metasitory.xml` and use its structure to search metacode by given `Criteria`. Here is the listing of `Metasitory` interface it must implement in order to support *Jeta* API:
+We won't create actual `Metasitory` implementation for this file. There's no difficulties to do that though. It parses `metasitory.xml` and use its structure to search metacode by given `Criteria`. Here's the listing of `Metasitory` interface it must implement in order to support *Jeta* API:
 
     :::java
     public interface Metasitory {

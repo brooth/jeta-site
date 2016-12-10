@@ -34,7 +34,7 @@ So, for our example it will be *"sampleActivity_textView"*.
 
 <span class="label label-info">Note</span> You shouldn't distrust this approach. In case of misspelling, it will fail at compile-time. Also, it helps you keep your code clean and in one style.
 
-Here is the `BaseActivity`:
+Here's the `BaseActivity`:
 
     :::java
     class BaseActivity extends Activity {

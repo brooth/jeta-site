@@ -10,7 +10,7 @@ For android developers, <a href="/guide/androjeta/overview.html">Androjeta</a> i
 
 At a glance:
 --------
-*Jeta* provides [plenty](/guide.html) of useful annotations that might help you develop java programs quicker and safer. Let's take a look on a simple example:
+Even though *Jeta* is made to help *Java* developers to write source code generators, it also provides [a number](/guide.html) of features, built on the same foundation. Let's take a look on a simple example:
 
 ### @Log
 Whatever logging tool is used in your project, the loggers can be supplied into classes through `Log` annotation. By default the logger has a name of the host (master) class:
@@ -28,7 +28,7 @@ instead of:
         private final Logger logger = LoggerFactory.getLogger(LogSample.class);
     }
 
-The second approach implies copy-paste. Programmers often forget to replace the class, so loggers have incorrect names. In the first code snippet, there is no need to copy the logger code - it is easy to write, but even if you do, the `logger` will have the correct name.
+The second approach implies copy-paste. Programmers often forget to replace the class, so loggers have incorrect names. In the first code snippet, there's no need to copy the logger code - it's easy to write, but even if you do, the `logger` will have the correct name.
 
 Of course, this is a straightforward sample, but it illustrates what *Jeta* is all about - *less code, more stability*. Follow the [user's guide](/guide.html) to find more features and know how to create yours.
 
@@ -41,8 +41,8 @@ Installation (gradle):
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.4'
-        compile 'org.brooth.jeta:jeta:1.4'
+        apt 'org.brooth.jeta:jeta-apt:2.3'
+        compile 'org.brooth.jeta:jeta:2.3'
     }
 
 Click [this page](/guide/install.html) for complete installation guide.

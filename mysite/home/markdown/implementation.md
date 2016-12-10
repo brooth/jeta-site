@@ -44,5 +44,5 @@ The helper method would be:
         return new ImplementationController<I>(metasitory, of).getImplementation();
     }
 
-In addition to `getImplementation()`, *ImplementationController* provides `getImplementations()` method, if it is necessary to get ALL the implementations, and `hasImplementation()` to check if there is ANY implementation.
+In addition to `getImplementation()`, *ImplementationController* provides `getImplementations()` method, if it's necessary to get ALL the implementations, and `hasImplementation()` to check if there's ANY implementation.
 

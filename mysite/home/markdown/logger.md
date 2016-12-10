@@ -2,7 +2,7 @@
     <h2>Logger Provider</h2>
 </div>
 
-In this tutorial, we will go through the logger providing feature. It's not the most complex framework's part but it is a useful annotation and time saver, though. It's allowed to use `@Log` with any logging tool. To do that you need to define a `NamedLoggerProvider`:
+In this tutorial, we will go through the logger providing feature. It's not the most complex framework's part but it's a useful annotation and time saver, though. It's allowed to use `@Log` with any logging tool. To do that you need to define a `NamedLoggerProvider`:
 
     :::java
     import org.brooth.jeta.log.NamedLoggerProvider;
@@ -27,12 +27,12 @@ The second step - you should pass it to `LogController`, but let's create a help
 
     :::java
     public static void createLogger(Object master) {
-        new LogController(metasitory, master).createLoggers(MyLoggerProvider.getInstance();
+        new LogController(metasitory, master).createLoggers(MyLoggerProvider.getInstance());
     }
 
-If you are not familiar with *MetaHelper*, you'd better go through [this guide](/guide/meta-helper.html) first.
+If you aren't familiar with *MetaHelper*, you'd better go through [this guide](/guide/meta-helper.html) first.
 
-Now, you're ready to supply the loggers in your classes through `@Log` annotation. <span class="label label-info">Note</span> By default the name of the logger equals master's simple name. If you need, you can define different one via the annotation's argument - `@Log("MyName")`.
+Now, you can supply loggers into your classes. <span class="label label-info">Note</span> By default the name of the logger equals master's name, but if you need to, you can define any other  using `value` argument - `@Log("MyName")`.
 
 ### Hello, World!
 Let's output `Hello, World!` message from [*HelloWorld*](/guide/code-generating.html#HelloWorldSample) sample.
@@ -52,7 +52,7 @@ Let's output `Hello, World!` message from [*HelloWorld*](/guide/code-generating.
         }
     }
 
-The result would be like:
+The result is going to be like:
 
     :::bash
     > Info[HelloWorldSample]: Hello, World!

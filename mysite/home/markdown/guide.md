@@ -7,7 +7,7 @@
 * [Complete installation guide](/guide/install.html)
 * [How to configure *Jeta* properly](/guide/config.html)
 * [Provide loggers with `@Log` easy and safe](/guide/logger.html)
-* [Dependecy Injection and `@MetaEntity`](/guide/inject.html)
+* [Dependecy Injection](/guide/inject.html)
 * [Easy to use observer pattern](/guide/observer.html)
 * [First on the market *Event Bus* without reflection](/guide/event-bus.html)
 * [How to collect scattered classes of your project](/guide/collector.html)

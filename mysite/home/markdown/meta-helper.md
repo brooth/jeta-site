@@ -2,7 +2,7 @@
   <h2>Meta Helper</h2>
 </div>
 
-*MetaHelper* is not provided by *Jeta* class. It's just a way to organize metacode invocation in your project. If you are not comfortable with static helpers, you shouldn't use it in your project. This class is used as an entry point to the framework's features. You can hold a singleton of the metasitory in it and pass it to the controllers:
+*MetaHelper* is a class not provided by *Jeta*. It's just a way to organize metacode invocation in your project. If you aren't comfortable with static helpers, you shouldn't use it in your project. This class is used as an entry point to the framework's features. You can hold a singleton of the metasitory in it and pass it to the controllers:
 
     :::java
     public class MetaHelper {
@@ -35,7 +35,7 @@
         }
     }
 
-Once you defined `createLoggers()`, you can provide loggers into your classes:
+Once you defined `createLoggers()`, you can supply loggers into your classes:
 
     :::java
     public class MyBaseClass {
@@ -44,7 +44,7 @@ Once you defined `createLoggers()`, you can provide loggers into your classes:
         }
     }
 
- <span class="label label-info">Note</span> `LogController` supports deep metacode invocation. This means that all `MyBaseClass` extended classes will get their loggers as well.
+ <span class="label label-info">Note</span> `LogController` supports deep metacode invocation. This means that all extended from `MyBaseClass` classes will get their loggers as well.
 
     :::java
     public class MyCompleteClass extends MyBaseClass {
@@ -58,7 +58,7 @@ Once you defined `createLoggers()`, you can provide loggers into your classes:
 
 
 ### Hello, World!
-Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime.html). Its *MetaHelper* will be:
+Let's complete our `HelloWorld` example from the [previous guide](/guide/at-runtime.html). Its *MetaHelper*:
 
     :::java
     public class MetaHelper {

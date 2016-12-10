@@ -2,8 +2,8 @@
 <h2>Configuration</h2>
 </div>
 
-In order to configure *Jeta* you need to create `jeta.properties` file in the root package of the source set. It's a plain *Java Properties* file in `key=value` format.
-By default, *Jeta* is not allowed to get the path to the source directory, so you have to provide it yourself. There are two common ways to do that. First one is to declare `sourcepath` option in your `build.gradle`:
+In order to configure *Jeta* you need to create `jeta.properties` file in the root package of the source set. It's a plain *Java Properties* file with `key=value` format.
+Unfortunately, there's no way of knowning where the source directory is located, so you must provide it by yourself. There are two ways to achieve this. First one is to declare `sourcepath` option in your `build.gradle`:
 
 ### `build.gradle`
 
@@ -22,11 +22,11 @@ The second way is available using `apt` arguments. Note that you need a plugin t
     }
 
 ### `jeta.properties`
-Let's go through the options available to config code generating. As previously mentioned, the most required property is `metasitory.package`. It must be unique for any module, e.g. test module. You will need this package to provide to `MapMetasitory` constructor at runtime to use this metasitory. The other options are described below as comments:
+Let's go through the options available to controll code generating. As previously mentioned, the most required property is `metasitory.package`. It must be unique for any module, e.g. test module. You will need this package to provide to `MapMetasitory` constructor at runtime to use this metasitory. The other options are described below as comments:
 
     :::properties
     # Source directory path. Absolute or relative to `jeta.properties` path
-    # to the source folder. Define it in case `jeta.properties` is not in the root
+    # to the source folder. Define it in case `jeta.properties` isn't in the root
     # of the source set. (`.` by default)
     sourcepath=.
 
@@ -40,7 +40,7 @@ Let's go through the options available to config code generating. As previously 
     utd.enable=true
 
     # Delete metacode if its master does not exists anymore
-    # (`true` by default if `utd` feature is enabled)
+    # (`true` by default if `utd` feature's enabled)
     utd.cleanup=true
 
     # Absolute or relative to `jeta.properties` path, where `utd` data is stored

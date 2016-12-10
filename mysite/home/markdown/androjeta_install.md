@@ -5,7 +5,7 @@
 
 *Androjeta* installation process is similar to the [installation](/guide/install.html) of *Jeta*. But here it's recommended to use [android-apt plugin by Hugo Visser](https://bitbucket.org/hvisser/android-apt) as the plugin.
 
-Here is the complete listing:
+Here's the complete listing:
 
     :::groovy
     buildscript {
@@ -31,8 +31,8 @@ Here is the complete listing:
     }
 
     dependencies {
-        apt 'org.brooth.androjeta:androjeta-apt:1.4'
-        compile 'org.brooth.androjeta:androjeta:1.4'
+        apt 'org.brooth.androjeta:androjeta-apt:2.3'
+        compile 'org.brooth.androjeta:androjeta:2.3'
     }
 
 

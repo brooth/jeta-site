@@ -12,7 +12,7 @@ Assume we have an interface `Ping` that we use to test connection to a server. I
         int execute();
     }
 
-There is a real implementation of `Ping` and it works well. Now we need to create a proxy class to be able to wrap an implementation and substitute some logic, e.g. divide the actual time of the `ping` by 2.
+There's a real implementation of `Ping` and it works well. Now we need to create a proxy class to be able to wrap an implementation and substitute some logic, e.g. divide the actual time of the `ping` by 2.
 
 
 The main aspect of *Jeta Proxy* is that you need to create an abstract class and implement only the method you want to override:

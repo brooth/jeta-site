@@ -12,7 +12,7 @@ In this post we'll create a processor for our [Hello, World sample](/guide/code-
 
 First of all, we must create a separate module since a processor and all the corresponding code is needed at compile time only. Also, this module must be compiled into byte-code before being passed to `javac` as the annotation processor.
 
-There are no special requirements for this module. It is a plain `java` project. Assume we named it *HelloWorldSampleApt* and certainly used `gradle` to build:
+There are no special requirements for this module. It's a plain `java` project. Assume we named it *HelloWorldSampleApt* and certainly used `gradle` to build:
 
     :::groovy
     apply plugin: 'java'
@@ -22,7 +22,7 @@ There are no special requirements for this module. It is a plain `java` project.
     }
 
     dependencies {
-        compile 'org.brooth.jeta:jeta-apt:1.4'
+        compile 'org.brooth.jeta:jeta-apt:2.3'
         // @SayHello annotation dependency
     }
 
@@ -67,8 +67,8 @@ Now, we need to add this module into `apt` classpath. Let's amend dependencies o
     :::groovy
     dependencies {
         apt project(':HelloWorldSampleApt')
-        apt 'org.brooth.jeta:jeta-apt:1.4'
-        compile 'org.brooth.jeta:jeta:1.4'
+        apt 'org.brooth.jeta:jeta-apt:2.3'
+        compile 'org.brooth.jeta:jeta:2.3'
     }
 
 Also, say to `Jeta` to use our processor. To do that we add the option into `jeta.processing`:

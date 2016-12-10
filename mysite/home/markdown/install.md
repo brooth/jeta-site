@@ -12,8 +12,8 @@ Add next lines into your `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.4'
-        compile 'org.brooth.jeta:jeta:1.4'
+        apt 'org.brooth.jeta:jeta-apt:2.3'
+        compile 'org.brooth.jeta:jeta:2.3'
     }
 
 
@@ -38,7 +38,7 @@ In order to use `apt`, you need to install an appropriate plugin as well. Follow
 After the plugin is applied, you can use `apt` to setup the annotation processing environment.
 
 ### `jeta.properties`
-In the next step, it's recommended to create `jeta.properties` file to be able to config code generation behavior. This file should be located in the root package of the source set. Complete configuration guide is on [this page](/guide/config.html). At the installation stage to provide `metasitory.package` property is enough:
+In the next step, it's recommended to create `jeta.properties` file to be able to config code generation behavior. You should put this file into root package of the source set. Complete configuration guide is on [this page](/guide/config.html). At this step - to provide `metasitory.package` property is enough:
 
     :::properties
     metasitory.package=com.example
@@ -55,7 +55,7 @@ To allow `jeta.properties` to be found by *Jeta* one extra step is needed. In ca
 
 For a reason *Gradle* doesn't provide it by itself.
 
-Another available option - `jetaProperties` apt argument. Some of the plugins support providing these arguments (`net.ltgt.apt` currently doesn't)
+Another available option - `jetaProperties` apt argument. Some of the plugins support providing such arguments (`net.ltgt.apt` currently doesn't)
 
     :::groovy
     apt {
@@ -93,8 +93,8 @@ Complete `build.gradle`:
     }
 
     dependencies {
-        apt 'org.brooth.jeta:jeta-apt:1.4'
-        compile 'org.brooth.jeta:jeta:1.4'
+        apt 'org.brooth.jeta:jeta-apt:2.3'
+        compile 'org.brooth.jeta:jeta:2.3'
     }
 
 At this point, you can start using *Jeta*, but properly configured, it's the better way to go. Refer to the [next guide](/guide/config.html) to find out details.

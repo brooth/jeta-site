@@ -26,9 +26,9 @@
         }
     }
 
-Well, it is clear enough `NotBlank` validator checks that a string is not blank, `NotEmpty` checks that  arrays, collections, maps and string objects are not empty. `MetaHelper.validate()` will throw `ValidationException` in case of validation errors, `MetaHelper.validateSafe()` will return a list of these errors.
+Well, it's clear enough `NotBlank` validator checks that a string isn't blank, `NotEmpty` checks that  arrays, collections, maps and string objects aren't empty. `MetaHelper.validate()` will throw `ValidationException` in case of validation errors, `MetaHelper.validateSafe()` will return a list of these errors.
 
-*Jeta* comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. But, of course, you can create any you need. For the illustration here is the listing of `NotNull` so you can write similar ones:
+*Jeta* comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. But, of course, you can create any you need. For the illustration here's the listing of `NotNull` so you can write similar ones:
 
     :::java
     public class NotNull implements Validator<Object, Object> {
@@ -96,7 +96,7 @@ Well, it is clear enough `NotBlank` validator checks that a string is not blank,
         }
     }
 
-As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? Well, `$f` will be replaced with the field it is applied to. `$m` refers to the master instance. In `${}` you can write any java code you need. Before the compilation *Jeta* will create a source code by these strings, which in case of misspelling won't be assembled.
+As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? Well, `$f` will be replaced with the field it's applied to. `$m` refers to the master instance. In `${}` you can write any java code you need. Before the compilation *Jeta* will create a source code by these strings, which in case of misspelling won't be assembled.
 
 ###ValidatorAlias
 

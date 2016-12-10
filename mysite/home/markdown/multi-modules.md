@@ -34,7 +34,7 @@ The only thing we need to do is to pass our test package name into this method d
 
 ###DI Scopes
 
-Let's go through an example, in which we need to substitute an entity that is injected in the main module. As it's described in [*Dependency Injection*](/guide/inject.html) guide, we must create a scope and provider that extend corresponding classes from the main module. With a created scope you can provide different entities for old dependencies. There is one problem though - how to replace the scope with the test one? We can use `@Implementation` [feature](/guide/implementation.html) for this:
+Let's go through an example, in which we need to substitute an entity that's injected in the main module. As it's described in [*Dependency Injection*](/guide/inject.html) guide, we must create a scope and provider that extend corresponding classes from the main module. With a created scope you can provide different entities for old dependencies. There's one problem though - how to replace the scope with the test one? We can use `@Implementation` [feature](/guide/implementation.html) for this:
 
     :::java
     @Scope

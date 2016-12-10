@@ -146,4 +146,4 @@ STATIC_URL = '/static/'
 
 MARKDOWN_FILES_URL = 'home/markdown/'
 
-JETA_VERSION = 1.4
+JETA_VERSION = 2.3
