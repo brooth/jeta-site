@@ -2,7 +2,7 @@
     <h2>Multi-Module Projects</h2>
 </div>
 
-Multi-module projects are the place where *Jeta* shows the best. You can share metacode between modules, override behavior, substitute classes and so on. It also should be important for any project, since projects are frequently composed of at least couple of modules - main and test. And the helper methods can be used in any of these modules.
+Multi-module projects are the place where *Jeta* shows the best. You can share metacode between modules, override behavior, substitute classes and many more. It also should be important for any project, since projects are frequently composed of at least couple of modules - main and test. And the helper methods can be used in any of these modules.
 
 As mentioned in [*Dependency Injection*](/guide/inject.html) article, you are allowed to extend injection providers. To make that possible, you must create one metacode-base for all your modules. In this tutorial, we will stick to the approach that we used in the previous guides - *MetaHelper*, which holds singleton instance of the metasitory.
 
@@ -34,7 +34,7 @@ The only thing we need to do is to pass our test package name into this method d
 
 ###DI Scopes
 
-Let's go through an example, in which we need to substitute an entity that's injected in the main module. As it's described in [*Dependency Injection*](/guide/inject.html) guide, we must create a scope and provider that extend corresponding classes from the main module. With a created scope you can provide different entities for old dependencies. There's one problem though - how to replace the scope with the test one? We can use `@Implementation` [feature](/guide/implementation.html) for this:
+Let's go through an example, in which we need to substitute an entity that's injected in the main module. As it's described in [*Dependency Injection*](/guide/inject.html) guide, we must create a scope and provider that extends corresponding classes from the main module. With created scope you can provide different entities for old dependencies. There's one problem though - how to replace the scope with the test one? We can use `@Implementation` [feature](/guide/implementation.html) for:
 
     :::java
     @Scope
@@ -43,16 +43,19 @@ Let's go through an example, in which we need to substitute an entity that's inj
     }
 
 
-By default, the implementation is provided by itself. In *MetaHelper* instead of creating `AppScope` we're looking for its implementation.
+Here, the implementation is provided by itself. In *MetaHelper* instead of creating `AppScope` we're looking for its implementation.
 
     :::java
     public class MetaHelper {
-        public static void inject(Object master) {
-            AppScope scope =
-                new ImplementationController<>(metasitory, AppScope.class)
+        private static MetaScope<AppScope> metaScope;
+
+        private static init(Metasitory metasitory) {
+            AppScope scope = new ImplementationController<>(metasitory, AppScope.class)
                     .getImplementation());
-            MetaScope<AppScope> metaScope =
-                new MetaScopeController<>(metasitory, scope).get();
+            metaScope = new MetaScopeController<>(metasitory, scope).get();
+        }
+
+        public static void inject(Object master) {
             new InjectController(metasitory, master).inject(metaScope);
         }
     }

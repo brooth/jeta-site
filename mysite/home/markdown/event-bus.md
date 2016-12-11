@@ -63,12 +63,12 @@ Two filters are available out of the box, by `id` and by `topic`. You can define
     protected void onMessage(Message msg) {
     }
 
-<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all the messages must be implemented from `Message` interface or extended from `BaseMessage` class.
+<span class="label label-info">Note</span> To make `id` and `topic` filters possible, all messages must implement `org.brooth.jeta.eventbus.Message` interface or extend `org.brooth.jeta.eventbus.BaseMessage` class.
 
 
 ### MetaFilters
 
-As previously mentioned, *Jeta* is designed to detect as many errors as possible at compile-time. With plain filters this principle works via generic types. Let's say we have a filter that works with a particular message type:
+As previously mentioned, *Jeta* is designed to detect as many errors at compile-time as possible . With plain filters this principle works via generic types. Let's say we have a filter that works with a particular message type:
 
     :::java
     public class MyMessage extends BaseMessage {
@@ -87,7 +87,7 @@ If you try to use this filter on a method with a parameter which not assigneble 
     public interface EvenMetaFilter extends Filter {}
 
 
-Here `$m` will be replaced with the master class which this filter uses. So if the master doesn't have `THE_NUMBER` field, it will fail during compilation. You can also use `$e` to get access to the message instance.
+Here `$m` will be replaced with the master class in which this filter is used. So if the master doesn't have field `THE_NUMBER`, you will get the error during compilation. You can also use `$e` to get access to the message instance.
 
 
 ### MetaHelper
@@ -96,8 +96,7 @@ You can either use *Jeta* basic implementation of `EventBus` - `org.brooth.jeta.
 
     :::java
     public static SubscriptionHandler registerSubscriber(Object master) {
-        return new SubscriberController<>(metasitory, master)
-            .registerSubscriber(bus);
+        return new SubscriberController<>(metasitory, master).registerSubscriber(bus);
     }
 
 You definitely should follow [this link](/guide/meta-helper.html) if you are still not familiar with *MetaHelper*.

@@ -2,11 +2,11 @@
     <h2>Custom Metasitory</h2>
 </div>
 
-If you want to create your own `Metasitory` implementation to use it in your project, well, *Jeta* allows that too. In this guide, we'll create one based on an `XML` file. I don't think it's a good idea but it's good enough for the illustration.
+You can create your own `Metasitory` implementation if you need to. In this guide, we'll create one based on an `XML` file. I don't think it's a good idea but it's good enough for the illustration.
 
 So, the idea here's that we want to generate an `XML` file which holds all the required information about metacode: masters, their metacode and the annotations they use.
 
-First, we need to create a `MetasitoryWriter`. This class generates a metacode store, i.e.`XML` file. As in case of [custom processor](/guide/custom-processor.html) it must be a separate module. For this example we won't use any modern tools to built `XML` files but just write it as plain text to the output:
+First, we need to create a `MetasitoryWriter`. This class generates a metacode store, i.e.`XML` file. As in case of [custom processor](/guide/custom-processor.html) it must be a separate module. For this example we won't use any modern tools to built `XML` and will be writing it as plain text:
 
     :::java
     public class XmlMetasitoryWriter implements MetasitoryWriter {
@@ -69,7 +69,7 @@ To say to *Jeta* to use this metasitory writer, add this property into `jeta.pro
     metasitory.writer=com.example.metasitory.XmlMetasitoryWriter
 
 
-After you assemble your project, we'll see `metasitory.xml` file in `build/generated/source/apt/main/` folder. Here's the its listing:
+After you assemble your project, we'll see `metasitory.xml` file in `build/generated/source/apt/main/` folder. Here's the its listing for this sample:
 
     :::xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -87,5 +87,7 @@ We won't create actual `Metasitory` implementation for this file. There's no dif
         Collection<IMetacode<?>> search(Criteria criteria);
         void add(Metasitory other);
     }
+
+You can refer to [MapMetasitory](https://github.com/brooth/jeta/blob/master/jeta/src/main/java/org/brooth/jeta/metasitory/MapMetasitory.java) implementation as the example.
 
 This sample is available on [GitHub](https://github.com/brooth/jeta-samples).

@@ -67,8 +67,8 @@ Now, we need to add this module into `apt` classpath. Let's amend dependencies o
     :::groovy
     dependencies {
         apt project(':HelloWorldSampleApt')
-        apt 'org.brooth.jeta:jeta-apt:2.3'
-        compile 'org.brooth.jeta:jeta:2.3'
+        apt 'org.brooth.jeta:jeta-apt:+'
+        compile 'org.brooth.jeta:jeta:+'
     }
 
 Also, say to `Jeta` to use our processor. To do that we add the option into `jeta.processing`:

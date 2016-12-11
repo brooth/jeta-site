@@ -2,7 +2,7 @@
     <h2>Observer</h2>
 </div>
 
-Easy to use [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) implementation.
+Easy to use implementation of [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern).
 
 ###Observable
 
@@ -34,14 +34,13 @@ or both:
 
 ###Observer
 
-To create an *Observer*, add `@Observe` annotation to the method that accepts one parameter - `Event` class.
+To create an *Observer*, put `@Observe` annotation on the method that accepts one parameter - *Event* class.
 
     :::java
     class Observer {
         private ObserverHandler handler;
 
-        public Observer() {
-            Observable observable = new Observable();
+        public Observer(Observable observable) {
             handler = MetaHelper.registerObserver(this, observable);
         }
 
@@ -50,9 +49,9 @@ To create an *Observer*, add `@Observe` annotation to the method that accepts on
         }
     }
 
-<span class="label label-info">Note</span> You must define the observables, i.e. the methods you are listening to.
+<span class="label label-info">Note</span> If you use an observable that extends *Observable*, you need to explicitly define the class of observable that fires the event: `MetaHelper.registerObserver(this, observable, Observable.class);`.
 
-The `handler` allows you to detach your class from *Observable*:
+The `handler` allows you to detach *Observer* from *Observable*:
 
     :::java
     handler.unregisterAll(Observable.class);
@@ -61,6 +60,7 @@ Stop listening to a certain event:
 
     :::java
     handler.unregister(Event.class);
+
 
 You can use one handler to control many *Observables*:
 
@@ -74,8 +74,6 @@ And unregister all the listeners at once:
 
 ###MetaHelper
 
-In the examples above we use two helper methods. Their code would be:
-
     :::java
     public static void createObservable(Object master) {
         new ObservableController<>(metasitory, master).createObservable();
@@ -83,6 +81,10 @@ In the examples above we use two helper methods. Their code would be:
 
     public static ObserverHandler registerObserver(Object observer, Object observable) {
         return new ObserverController<>(metasitory, observer).registerObserver(observable);
+    }
+
+    public static ObserverHandler registerObserver(Object observer, Object observable, Class cls) {
+        return new ObserverController<>(metasitory, observer).registerObserver(observable, cls);
     }
 
 Please, read [this article](/guide/meta-helper.html) if you have questions about *MetaHelper*.

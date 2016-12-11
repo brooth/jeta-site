@@ -2,7 +2,7 @@
     <h2>Jeta Collectors</h2>
 </div>
 
-Well, *Jeta Collectors* allow you to "collect" scattered types in your project. Let's get through with an example. Assume we have an *EventManager* that receives events outside and invokes appropriate handlers:
+Well, *Jeta Collectors* allow you to "collect" scattered classes (types) in your project. Let's get through with an example. Assume we have an *EventManager* that receives events outside and invokes appropriate handlers:
 
     :::java
     interface EventHandler {
@@ -19,7 +19,7 @@ Well, *Jeta Collectors* allow you to "collect" scattered types in your project. 
         //...
     }
 
-Commonly used practice is to create an xml file and register all the handlers in it. In the event manager we have to parse the xml file and load these handlers using `Class.forName()`.
+Commonly used practice is to create an xml file and define handlers in it. In the event manager we have to parse this xml file and load the handlers using `Class.forName()`.
 
     :::java
     class HandlerOne implements EventHandler {
@@ -49,7 +49,7 @@ Commonly used practice is to create an xml file and register all the handlers in
         }
     }
 
-Besides, this approach has no validation, so it fails at runtime in case of misspelling. It's frequently forgotten to modify the xml file each time you add a new handler into your project.
+Besides, this approach has no validation - fails at runtime in case of misspelling. It's frequently forgotten to modify the xml file each time you add a new handler into your project.
 
 ###TypeCollector
 
@@ -57,7 +57,7 @@ Besides, this approach has no validation, so it fails at runtime in case of miss
 
     :::java
     @interface Handler {
-        EventType[] value();
+        EventType value();
     }
 
     @Handler(EVENT_ONE)
@@ -75,19 +75,19 @@ Besides, this approach has no validation, so it fails at runtime in case of miss
     @TypeCollector(Handler.class)
     class EventManager {
         void collectHandlers() {
-             Collection<? extends Class> types =
+            Collection<? extends Class> types =
                 MetaHelper.collectTypes(EventManager.class, Handler.class);
-            // transform types -> handlers
+            Map<EventType, Class> handlers = new HashMap(types.size());
+            for (Class type : types)
+                handlers.put(type.getAnnotation(Handler.class).value(), type);
         }
     }
 
 As you expect, `MetaHelper.collectTypes` will return a collection with two items - `HandlerOne` and `HandlerTwo`. So, if you add a new handler and put `@Handler` on, *TypeCollector* will return it as well, without any amendments.
 
- <span class="label label-info">Note</span> *TypeCollector* allows you to search for multiple annotations. Just pass these annotations into `@TypeCollector`. This is why you must specify exact annotation class in `collectTypes` method parameters.
-
 ###ObjectCollector
 
-*ObjectCollector* does the same as *TypeCollector*, but returns providers not types. So if you are going to create instances of the annotation users, you should use *ObjectCollector* instead of *TypeCollector*:
+*ObjectCollector* does the same as *TypeCollector*, but returns providers instead of classes. It's useful if you need to create instances of the annotation users:
 
     :::java
     @ObjectCollector(Handler.class)
@@ -95,15 +95,14 @@ As you expect, `MetaHelper.collectTypes` will return a collection with two items
         Map<EventType, Provider<EventHandler>> handlers;
 
         void collectHandlers() {
-                List<Provider<?>> objects =
-                    MetaHelper.collectObjects(EventManager.class, Handler.class);
-            // transform objects -> handlers
+            List<Provider<?>> objects =
+                MetaHelper.collectObjects(EventManager.class, Handler.class);
         }
     }
 
 ###MetaHelper
 
-Add the following methods into *MetaHelper* in order to use these features.
+Here are two helper method for the examples above:
 
     :::java
     public static List<Class<?>> collectTypes(Class<?> masterClass, Class<? extends Annotation> annotationClass) {

@@ -26,9 +26,9 @@
         }
     }
 
-Well, it's clear enough `NotBlank` validator checks that a string isn't blank, `NotEmpty` checks that  arrays, collections, maps and string objects aren't empty. `MetaHelper.validate()` will throw `ValidationException` in case of validation errors, `MetaHelper.validateSafe()` will return a list of these errors.
+Well, it's clear enough that `NotBlank` validator checks a string isn't blank. `NotEmpty` can check an array, collection, map or string isn't empty. `MetaHelper.validate()` throws `ValidationException` in case of validation error, `MetaHelper.validateSafe()` returns the errors as a list.
 
-*Jeta* comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. But, of course, you can create any you need. For the illustration here's the listing of `NotNull` so you can write similar ones:
+*Jeta* comes with predefined validators - `NotBlank`, `NotEmpty`, and `NotNull`. But, of course, you can create as many as you need. For the illustration here's the listing of `NotNull` so you can write similar ones:
 
     :::java
     public class NotNull implements Validator<Object, Object> {
@@ -96,11 +96,11 @@ Well, it's clear enough `NotBlank` validator checks that a string isn't blank, `
         }
     }
 
-As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? Well, `$f` will be replaced with the field it's applied to. `$m` refers to the master instance. In `${}` you can write any java code you need. Before the compilation *Jeta* will create a source code by these strings, which in case of misspelling won't be assembled.
+As you probably noticed, `ExperienceValidator` uses `age` field for the check. Besides, if you use `AgeValidator` on a string field, it will fail during compilation. How does it work? Well, `$f` will be replaced with the field it's applied to. `$m` refers to the master instance. In `${}` you can write any Java code you want to. Before the compilation *Jeta* will create the source code by these strings, which in case of misspelling, of course, won't be assembled.
 
 ###ValidatorAlias
 
-*ValidatorAlias* allows you to create your custom annotations to validate with. You need to define these annotations in `jeta.properties` file. Please, read [this post](/guide/config.html) if you have questions about this file.
+*ValidatorAlias* allows you to create custom annotations that you can use as validators themself. You need to define these annotations in `jeta.properties` file. Please, read [this post](/guide/config.html) if you have questions about this file.
 
     :::properties
     validator.alias.com.example.NotYoung = com.example.AgeValidator
@@ -139,7 +139,7 @@ Well, due to *ValidatorAlias* the code looks cleaner:
         }
     }
 
-<span class="label label-warning">Pay attention</span> Prior to version 2.0 the annotations must be already compiled into byte-code in order to use them as the aliases.
+<span class="label label-warning">Pay attention</span> Prior to version 2.0 the alias-annotations must be compiled into byte-code in order to use them as the aliases.
 
 <span class="label label-success">Tip</span> You can use *Jeta* `NonNull` validator alongside with `javax.annotation.Nonnull`. It allows you to actually validate *NPE* issues, not just highlight them by an IDE.
 

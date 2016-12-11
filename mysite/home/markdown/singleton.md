@@ -17,7 +17,7 @@
 
 ###Multiton
 
-Unlike *Singleton*, *Multiton* is a quite useful feature. If you have ever tried to implement a thread-safe multiton pattern, you would know about its complexity. If you haven't, you can read [this thread](http://stackoverflow.com/questions/11126866/thread-safe-multitons-in-java) on *StackOverFlow* to be aware.
+Unlike *Singleton*, *Multiton* solves quite complex problem. If you've ever tried to implement a thread-safe multiton pattern, you would probably know. If you haven't, you can read [this thread](http://stackoverflow.com/questions/11126866/thread-safe-multitons-in-java) on *StackOverFlow* to be aware.
 
     :::java
     @Multiton

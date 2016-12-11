@@ -4,7 +4,7 @@
 
 *Jeta Proxy* allows you to create [proxy objects](https://en.wikipedia.org/wiki/Proxy_pattern). Let's demonstrate this feature with an example.
 
-Assume we have an interface `Ping` that we use to test connection to a server. It contains `execute` method which returns the time of its work - the ping time.
+Assume we have an interface `Ping` that we use to test connection to a server. It contains `execute` method which returns the ping time:
 
     :::java
     interface Ping {

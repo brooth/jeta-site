@@ -6,7 +6,7 @@ In addition to [a number](/guide.html) of *Jeta* features, that are available on
 
 ### `Java reflection` as a bad manner
 
-Despite the fact that mobile phones might give odds to personal computers, it's a bad manner nowadays to use *Java Reflection* in Android projects. Until the manufacturers offer the better batteries, the frameworks that are built on *Java Reflection*, will not be rivals to the ones built on `javax.annotation.processing` like *Jeta*.
+Despite the fact that mobile phones might give odds to personal computers, it's still a bad manner nowadays to use *Java Reflection* in Android projects. Until the manufacturers offer the better batteries, the frameworks that are built on *Java Reflection*, won't be rivals to the ones built on `javax.annotation.processing` like *Jeta*.
 
 
 ### `onSaveInstanceState` issue
@@ -36,4 +36,4 @@ You aren't allowed to scan packages on Android if you need to search for some cl
 
 
 ###P.S.
-In fact, *Jeta* was born as the result of all these issues, Android developers face every day. Follow the [guide](/guide.html) to be able to create stable Android apps and enjoy the process.
+In fact, *Jeta* was born as the result of all these issues, Android developers face to every day. Follow [this page](/guide.html) to be able to create stable Android apps and enjoy the process.

@@ -30,7 +30,7 @@ Fortunately, `@Retain` annotation can do that for you:
         String data;
     }
 
-In the `BaseActivity` we need to call the helper methods:
+In the `BaseActivity` we need to call these two helper methods:
 
     :::java
      @Override
@@ -45,6 +45,8 @@ In the `BaseActivity` we need to call the helper methods:
         super.onSaveInstanceState(outState);
         MetaHelper.saveRetains(this, outState);
     }
+
+And this is it. Excited? Yeah, me too.
 
 ###MetaHelper
 
